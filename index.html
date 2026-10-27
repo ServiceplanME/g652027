@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The new BMW X5 live presentation</title>
+<style>
+@font-face{font-family:BMWNext;font-weight:100;src:url(assets/fonts/BMWTypeNext-Thin.otf) format('opentype')}
+@font-face{font-family:BMWNext;font-weight:300;src:url(assets/fonts/BMWTypeNext-Light.otf) format('opentype')}
+@font-face{font-family:BMWNext;font-weight:400;src:url(assets/fonts/BMWTypeNext-Regular.otf) format('opentype')}
+@font-face{font-family:BMWNext;font-weight:700;src:url(assets/fonts/BMWTypeNext-Bold.otf) format('opentype')}
+:root{--bg:#000;--ink:#fff;--mute:rgba(255,255,255,.58);--dim:rgba(255,255,255,.36);--line:rgba(255,255,255,.14);--blue:#1c69d4;--cyan:#7cc4ff;--ice:#d2e8ff;--panel:#07090d}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#000;color:var(--ink);font-family:BMWNext,Helvetica,Arial,sans-serif;font-weight:300;overflow:hidden;height:100%}
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+#stage{width:1920px;height:1080px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;padding:110px 120px 100px;opacity:0;visibility:hidden;transition:opacity .6s ease;overflow:hidden;background:var(--bg)}
+.slide.on{opacity:1;visibility:visible}
+.hdr{position:absolute;top:44px;left:120px;right:120px;display:flex;justify-content:space-between;font-size:17px;color:var(--dim);letter-spacing:.04em;font-weight:400;z-index:5}
+.hdr b{color:var(--mute);font-weight:700}
+.ftr{position:absolute;bottom:40px;left:120px;right:120px;display:flex;justify-content:space-between;font-size:15px;color:var(--dim);z-index:5}
+.lab{font-size:19px;font-weight:700;letter-spacing:.06em;color:var(--cyan);margin-bottom:26px;display:flex;gap:18px;align-items:center}
+.lab i{font-style:normal;color:var(--dim);font-weight:400}
+h1{font-weight:100;font-size:150px;line-height:.98;letter-spacing:-.01em}
+h2{font-weight:300;font-size:76px;line-height:1.04;letter-spacing:-.005em;max-width:1500px}
+h3{font-weight:400;font-size:30px;line-height:1.2;margin-bottom:12px}
+p,li{font-size:23px;line-height:1.5;color:var(--mute)}
+p b,li b{color:var(--ink);font-weight:400}
+.lead{font-size:30px;line-height:1.45;color:var(--mute);max-width:1250px;margin-top:30px}
+.ar{font-family:Arial,'Geeza Pro',sans-serif;direction:rtl;unicode-bidi:isolate;font-weight:400}
+.roomy td{font-size:23px;padding:20px 22px 20px 0}.roomy th{font-size:16px}.roomy p{font-size:23px}.roomy .card p{font-size:22px}.roomy h3{font-size:30px}
+.fit{width:100%;object-fit:cover;display:block;border-radius:2px;border:1px solid var(--line)}
+.rule{height:3px;border-radius:3px;background:var(--ice);box-shadow:0 0 14px rgba(160,205,255,.9),0 0 3px #fff}
+.shard{position:absolute;transform:skewX(-38deg);background:linear-gradient(180deg,#fff 0%,var(--cyan) 30%,var(--blue) 70%,#06142c 100%)}
+.shard.d{background:linear-gradient(180deg,rgba(124,196,255,.55),rgba(28,105,212,.25) 60%,transparent)}
+.grid{display:grid;gap:28px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:30px 32px}
+.card h3{font-size:27px}
+.card p{font-size:20px}
+.num{font-weight:700;color:var(--ink);font-size:18px;letter-spacing:.06em}
+.cap{display:flex;gap:16px;font-size:16px;color:var(--mute);margin-top:12px;line-height:1.4}
+.cap .n{font-weight:700;color:#fff}
+.cap .t{color:var(--dim);white-space:nowrap}
+.frame{width:100%;display:block;border-radius:2px;border:1px solid var(--line)}
+.tag{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.08em;padding:5px 11px;border-radius:30px;border:1px solid var(--cyan);color:var(--cyan);vertical-align:middle}
+.tag.w{border-color:rgba(255,255,255,.4);color:var(--mute)}
+table{border-collapse:collapse;width:100%}
+th{font-size:15px;font-weight:700;letter-spacing:.06em;color:var(--dim);text-align:left;padding:0 18px 14px 0;border-bottom:1px solid var(--line)}
+td{font-size:19px;line-height:1.38;color:var(--mute);padding:14px 18px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td b{color:#fff;font-weight:400}
+.section{display:flex;flex-direction:column;justify-content:center}
+.section .big{font-weight:100;font-size:260px;line-height:.9;color:#fff}
+.quote{border-left:3px solid var(--cyan);padding:6px 0 6px 26px;margin:14px 0}
+.quote .ar{font-size:24px;color:#fff;line-height:1.5}
+.quote .en{font-size:19px;color:var(--mute);margin-top:4px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);margin-right:12px}
+#nav{position:fixed;bottom:18px;right:22px;display:flex;gap:8px;z-index:20;opacity:.35;transition:opacity .3s}
+#nav:hover{opacity:1}
+#nav button{background:#111;border:1px solid #333;color:#fff;font:400 14px BMWNext,Arial;padding:8px 14px;border-radius:3px;cursor:pointer}
+#prog{position:fixed;left:0;bottom:0;height:2px;background:var(--cyan);box-shadow:0 0 8px var(--cyan);z-index:20;transition:width .4s}
+canvas{display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips button{background:transparent;border:1px solid var(--line);color:var(--mute);font:400 15px BMWNext,Arial;padding:8px 13px;border-radius:30px;cursor:pointer}
+.chips button.on{border-color:var(--cyan);color:#fff;box-shadow:0 0 10px rgba(124,196,255,.35)}
+.tl{display:flex;height:120px;gap:4px;margin-top:40px}
+.tl div{position:relative;border-top:3px solid rgba(255,255,255,.6);padding-top:16px}
+.tl div.new{border-top-color:var(--cyan);box-shadow:0 -8px 18px -10px var(--cyan)}
+.tl .t{font-size:15px;color:var(--dim)}
+.tl .n{font-size:20px;color:#fff;font-weight:400;margin-top:6px;line-height:1.2}
+.steps{counter-reset:s}
+.steps li{list-style:none;position:relative;padding-left:58px;margin-bottom:14px}
+.steps li:before{counter-increment:s;content:counter(s,decimal-leading-zero);position:absolute;left:0;top:2px;font-weight:700;color:var(--cyan);font-size:18px}
+.section .big{font-size:210px}
+.shards{position:absolute;top:0;bottom:0;right:0;left:1380px;overflow:hidden;z-index:0;pointer-events:none}
+.section>.lab,.section>.big,.section>.lead{position:relative;z-index:2}
+.btn{display:inline-flex;align-items:center;gap:12px;background:transparent;border:1px solid var(--cyan);color:#fff;font:400 18px BMWNext,Arial;padding:12px 22px;border-radius:40px;cursor:pointer;box-shadow:0 0 14px rgba(124,196,255,.25);transition:background .2s}
+.btn:hover{background:rgba(124,196,255,.12)}
+.modal{position:absolute;inset:0;background:rgba(0,0,0,.86);backdrop-filter:blur(6px);z-index:30;display:none;align-items:center;justify-content:center}
+.modal.open{display:flex}
+.modal .box{width:1640px;background:#05070a;border:1px solid var(--line);border-radius:6px;padding:56px 64px;position:relative;box-shadow:0 0 60px rgba(28,105,212,.25)}
+.modal .x{position:absolute;top:22px;right:26px;background:none;border:1px solid var(--line);color:#fff;width:46px;height:46px;border-radius:50%;font:300 24px BMWNext,Arial;cursor:pointer}
+#menu{position:fixed;inset:0;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);z-index:40;display:none;overflow:auto;padding:60px 6vw}
+#menu.open{display:block}
+#menu h4{font:700 13px BMWNext,Arial;letter-spacing:.08em;color:var(--cyan);margin:0 0 10px}
+#menu .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px 40px;margin-top:34px}
+#menu a{display:block;color:rgba(255,255,255,.62);font:300 16px/1.35 BMWNext,Arial;text-decoration:none;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);cursor:pointer}
+#menu a:hover,#menu a.cur{color:#fff}
+#menu a span{color:rgba(255,255,255,.35);margin-right:10px;font-weight:400}
+#menu .top{display:flex;justify-content:space-between;align-items:center}
+#menu .top b{font:100 54px BMWNext,Arial;color:#fff}
+#menu .top button{background:none;border:1px solid rgba(255,255,255,.25);color:#fff;font:400 15px BMWNext,Arial;padding:9px 16px;border-radius:30px;cursor:pointer}
+#nav{opacity:.55}
+#nav .sec{border-color:var(--cyan)}
+.ss{position:relative;overflow:hidden;background:#000;border:1px solid var(--line);border-radius:2px}
+.ss img{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;opacity:0;animation:ssfade 42s infinite}
+.ss img:nth-child(2){animation-delay:6s}.ss img:nth-child(3){animation-delay:12s}.ss img:nth-child(4){animation-delay:18s}.ss img:nth-child(5){animation-delay:24s}.ss img:nth-child(6){animation-delay:30s}
+.ss img:nth-child(7){animation-delay:36s}
+@keyframes ssfade{0%{opacity:0;transform:scale(1) translateX(0)}3%{opacity:1}14.3%{opacity:1}19%{opacity:0;transform:scale(1.07) translateX(-2%)}100%{opacity:0}}
+.vref{background:#000;border:1px solid var(--line);border-radius:4px;object-fit:contain;display:block}
+.vcap{font-size:14px;color:var(--dim);margin-top:8px}
+.lsg{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;margin-top:26px}
+.lsg td{font-size:17px;padding:9px 14px 9px 0}
+.lsg li{font-size:17px;margin-bottom:9px}
+.cd{font-weight:100;font-size:230px;line-height:1;letter-spacing:.02em;font-variant-numeric:tabular-nums;text-shadow:0 0 40px rgba(124,196,255,.45)}
+.plate{height:150px;border-radius:2px;border:1px solid var(--line);position:relative;overflow:hidden}
+.plate span{position:absolute;left:12px;bottom:10px;font-size:14px;color:#fff;font-weight:400;text-shadow:0 1px 6px #000}
+.tight td{padding:10px 18px 10px 0;font-size:18px}
+.ph{border:1.5px dashed rgba(124,196,255,.55);border-radius:6px;background:repeating-linear-gradient(135deg,rgba(124,196,255,.04) 0 14px,transparent 14px 28px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--mute);font-size:18px}
+.ph .play{width:74px;height:74px;border-radius:50%;border:1.5px solid var(--cyan);display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(124,196,255,.35)}
+.ph .play:after{content:"";border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:6px}
+.modal.full .box{width:1820px;height:1000px;padding:0;overflow:hidden}
+.modal.full iframe{width:100%;height:100%;border:0;background:#fff}
+.modal.full .x{z-index:3;background:#000}
+.list2 td{padding:9px 14px 9px 0;font-size:18px}
+.list2 td:first-child{width:46px;color:var(--cyan);font-weight:700;font-size:15px}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+<!-- COVER -->
+<section class="slide" data-sec="Cover" data-t="Cover">
+  <canvas id="coverCanvas" width="1920" height="1080" style="position:absolute;inset:0;opacity:.9"></canvas>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.85) 85%)"></div>
+  <div style="position:absolute;left:120px;bottom:130px;z-index:2">
+    <div class="lab">BMW X5 KSA launch <i>Creative proposal</i></div>
+    <h1>The X5 live<br>presentation.</h1>
+    <p style="margin-top:28px;font-size:26px">A pre-recorded premiere that plays like a live event. Premieres Sunday 8 November 2026.</p>
+  </div>
+  <div style="position:absolute;right:120px;bottom:136px;z-index:2;text-align:right">
+    <img src="assets/img/bmw-logo.svg" style="width:96px;height:96px;opacity:.95" alt="BMW">
+    <p style="font-size:16px;margin-top:18px;color:var(--dim)">Serviceplan Middle East for BMW / MYNM</p>
+  </div>
+</section>
+
+<!-- BRIEF -->
+<section class="slide" data-sec="The brief" data-t="Where we are">
+  <div class="lab">01 <i>Where we are</i></div>
+  <h2>The events are cancelled. The launch still needs a room, a moment and an audience.</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:56px">
+    <div class="card"><div class="num">What changed</div><p style="margin-top:14px">Customer and media events are off for safety reasons. The launch moves to social, in a premium keynote format.</p></div>
+    <div class="card"><div class="num">The format</div><p style="margin-top:14px">A scheduled premiere on IG, YouTube and X with a countdown and a live chat, then boosted through media.</p></div>
+    <div class="card"><div class="num">Where and when</div><p style="margin-top:14px">Sulaymaniyah showroom, Riyadh. Premiere on Sunday 8 November 2026.</p></div>
+  </div>
+  <div style="position:absolute;left:120px;right:120px;bottom:100px"><img src="assets/img/MOCK.jpg" class="fit" style="height:360px;object-position:center 55%"><div class="cap"><span class="n">Set</span><span>Set mockup: one highlight screen, an interview area to the left, the car to the right.</span></div></div>
+</section>
+
+<!-- IDEA -->
+<section class="slide" data-sec="The idea" data-t="Shown, never claimed">
+  <div class="lab">02 <i>The approach</i></div>
+  <h2 style="font-size:96px;font-weight:100">Shown, never claimed.</h2>
+  <p class="lead">Leading with confidence means the car does the talking. The show has to feel live, keep people watching until the reveal, and leave a library of content behind it. Three principles hold it together.</p>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:70px">
+    <div><div class="rule" style="width:80px;margin-bottom:28px"></div><h3>It plays live</h3><p>A countdown before every stream, a host who talks to the audience, and a chat that is looked after in real time. Pre-recorded, never feels it.</p></div>
+    <div><div class="rule" style="width:80px;margin-bottom:28px"></div><h3>The screen is the second host</h3><p>The highlight screen behind them has its own story: abstract before the reveal, a landscape that feels like home after it.</p></div>
+    <div><div class="rule" style="width:80px;margin-bottom:28px"></div><h3>Built to be cut</h3><p>Every segment is shot to stand alone, and the same day delivers two car reels and a full set of stills.</p></div>
+  </div>
+</section>
+
+<!-- SECTION FILM -->
+<section class="slide section" data-sec="The film" data-t="The film">
+  <div class="shard" style="width:160px;height:1300px;left:1480px;top:-110px;opacity:.9"></div>
+  <div class="shard d" style="width:70px;height:1300px;left:1690px;top:-110px"></div>
+  <div class="shard" style="width:28px;height:1300px;left:1810px;top:-110px;opacity:.7"></div>
+  <div class="lab">03</div>
+  <div class="big">The film.</div>
+  <p class="lead" style="max-width:1050px">The approved script and storyboard, and how each moment comes to life on the day.</p>
+</section>
+
+<!-- RUN OF SHOW -->
+<section class="slide" data-sec="The film" data-t="Run of show">
+  <div class="lab">03.1 <i>Run of show</i></div>
+  <h2>Six segments, around five minutes.</h2>
+  <p class="lead" style="font-size:24px">Timings are indicative only, to show the shape of the film. Final durations are set in the edit.</p>
+  <div class="tl">
+    <div style="flex:25"><div class="t">&nbsp;</div><div class="n">Cold open</div></div>
+    <div style="flex:25"><div class="t">&nbsp;</div><div class="n">Host intro</div></div>
+    <div style="flex:90"><div class="t">&nbsp;</div><div class="n">Interview, 3 questions</div></div>
+    <div style="flex:55"><div class="t">&nbsp;</div><div class="n">The reveal</div></div>
+    <div style="flex:100"><div class="t">&nbsp;</div><div class="n">Walkthrough, 4 stops</div></div>
+    <div style="flex:22"><div class="t">&nbsp;</div><div class="n">Close</div></div>
+  </div>
+  <table style="margin-top:50px">
+    <tr><th>Segment</th><th>Indicative length</th><th>Language</th><th>Subtitles</th><th>Screen</th></tr>
+    <tr><td><b>1 Cold open</b></td><td>About 25s</td><td>Arabic VO</td><td>English</td><td>Screensaver, low</td></tr>
+    <tr><td><b>2 Ahmad intro and handover</b></td><td>About 25s</td><td>Arabic, then English</td><td>English / Arabic</td><td>Screensaver, full</td></tr>
+    <tr><td><b>3 Interview, 3 questions</b></td><td>About 1:30</td><td>English</td><td>Arabic</td><td>Screensaver, full</td></tr>
+    <tr><td><b>4 Reveal</b></td><td>About 55s</td><td>Music, 2 lines</td><td>Both</td><td>Five generations, then home</td></tr>
+    <tr><td><b>5 Walkthrough, 4 stops</b></td><td>About 1:40</td><td>Arabic</td><td>English</td><td>Harrat home plate</td></tr>
+    <tr><td><b>6 Close and CTA</b></td><td>About 20s</td><td>Arabic</td><td>English</td><td>Harrat, then end card</td></tr>
+  </table>
+</section>
+
+<!-- SCENES 1-2 -->
+<section class="slide" data-sec="The film" data-t="Scenes 1 and 2">
+  <div class="lab">Scenes 1 and 2 <i>Cold open and intro</i></div>
+  <h2 style="font-size:60px">Darkness first. Then a host, a guest, and a joke.</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:34px;gap:20px">
+    <div><img class="fit" style="height:215px" src="assets/img/F1.jpg"><div class="cap"><span class="n">F1</span><span>Macro on the cover edge. A sliver of light crosses the fabric.</span></div></div>
+    <div><img class="fit" style="height:215px" src="assets/img/F2.jpg"><div class="cap"><span class="n">F2</span><span>Since 1999 / منذ ١٩٩٩</span></div></div>
+    <div><img class="fit" style="height:215px" src="assets/img/F3.jpg"><div class="cap"><span class="n">F3</span><span>The fifth generation / الجيل الخامس</span></div></div>
+    <div><img class="fit" style="height:215px" src="assets/img/F4.jpg"><div class="cap"><span class="n">F4</span><span>Ahmad beside the covered car, Arabic then English.</span></div></div>
+    <div><img class="fit" style="height:215px" src="assets/img/F5.jpg"><div class="cap"><span class="n">F5</span><span>"Our guest doesn't speak Arabic... yet."</span></div></div>
+    <div><img class="fit" style="height:215px" src="assets/img/F6.jpg"><div class="cap"><span class="n">F6</span><span>"Adam, welcome." Super: Adam Flint, Managing Director.</span></div></div>
+  </div>
+  <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:28px;gap:40px">
+    <p style="font-size:20px"><span class="dot"></span><b>VO.</b> "In 1999, BMW introduced the original Sports Activity Vehicle (SAV). Today, the all-new fifth-generation BMW X5 arrives in the Kingdom." The cold open is lit only by the screen, and the supers play on the screen itself.</p>
+    <p style="font-size:20px"><span class="dot"></span><b>Screen.</b> The abstract screensaver runs at low brightness through Scene 1, then comes up to full as the set lights rise on "Adam, welcome".</p>
+  </div>
+</section>
+
+<!-- INTERVIEW -->
+<section class="slide roomy" data-sec="The film" data-t="Scene 3, the interview">
+  <div class="lab">Scene 3 <i>Interview</i></div>
+  <h2 style="font-size:60px">The interview. The car stays covered, and in frame.</h2>
+  <div class="grid" style="grid-template-columns:1.1fr 1fr;gap:60px;margin-top:40px">
+    <div>
+      <img class="frame" src="assets/img/F7.jpg">
+      <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px">
+        <img class="frame" src="assets/img/F8.jpg"><img class="frame" src="assets/img/F9.jpg"><img class="frame" src="assets/img/F10.jpg">
+      </div>
+      <p style="margin-top:20px;font-size:21px">The covered car always in frame between them. Two cameras on a slow drift. The abstract screensaver runs behind them until the reveal.</p>
+    </div>
+    <div>
+      <table class="tight">
+        <tr><th style="width:250px">Question</th><th>Adam's answer beats</th></tr>
+        <tr><td><b>Q1</b> In 1999, the BMW X5 was something nobody had seen before. What was BMW trying to do?</td><td>The original BMW Sports Activity Vehicle (SAV). It has consistently set industry benchmarks since its launch in 1999.</td></tr>
+        <tr><td><b>Q2</b> Five generations later, it's a global bestseller. Why has it lasted?</td><td>Imposing presence and a flawless symbiosis of comfort and driving pleasure. Produced at the Home of X, BMW Group Plant Spartanburg, since 1999. The new BMW X5 will set the benchmark once again.</td></tr>
+        <tr><td><b>Q3</b> What makes the all-new fifth generation different?</td><td>An all-new design with a powerful, monolithic appearance, blending classic BMW SAV proportions with the Neue Klasse design language, and a redesigned interior with BMW Panoramic iDrive.</td></tr>
+        <tr><td><b>Exit line</b></td><td>"But honestly, Ahmad, I'd rather show you than tell you."</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- REVEAL -->
+<section class="slide" data-sec="The film" data-t="Scene 4, the reveal">
+  <div class="lab">Scene 4 <i>The reveal</i></div>
+  <h2 style="font-size:60px">The reveal: the handover.</h2>
+  <p class="lead" style="font-size:22px;margin-top:12px;max-width:1600px">The light leaves the screen and lands on the car. The last generation on the screen slides off its edge, travels across the floor as a single line of light, and wakes the grille. Five generations handed over in one move.</p>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:22px 24px;margin-top:30px">
+    <div><img class="fit" style="height:236px" src="assets/img/F11.jpg"><div class="cap"><span class="n">01</span><span>"Lights, please." The five generations play in sequence: E53, E70, F15, G05, then a silhouette of the new car.</span></div></div>
+    <div><img class="fit" style="height:236px" src="assets/img/F12.jpg"><div class="cap"><span class="n">02</span><span>The silhouette slides off the screen edge and a line of light runs across the floor to the car. Full blackout and a beat of silence. The cover comes off, out of sight.</span></div></div>
+    <div><img class="fit" style="height:236px" src="assets/img/F13.jpg"><div class="cap"><span class="n">03</span><span>The light arrives. The BMW Iconic Glow vertical kidney grille comes up first, then the new double-X daytime running lights.</span></div></div>
+    <div><img class="fit" style="height:236px" src="assets/img/F14.jpg"><div class="cap"><span class="n">04</span><span>A single light sweeps the length of the body. The music resolves and the full set lights come up.</span></div></div>
+    <div><img class="fit" style="height:236px" src="assets/img/F15.jpg"><div class="cap"><span class="n">05</span><span>Welcome moment: the 3D backlit ambient light strip lights up the wrap-around cockpit, as if the car is greeting the room. Adam and Ahmad step in.</span></div></div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <p style="font-size:17px"><b>The generations.</b> 1999, 2006, 2013, 2018, 2026. E53, E70, F15, G05, then the new car.</p>
+      <p style="font-size:17px"><b>Lines.</b> Adam: "Ladies and gentlemen, the new BMW X5. It's all yours, Ahmad." Ahmad: <span class="ar" style="color:#fff">BMW X5 الجديدة كلياً</span></p>
+      <div><button class="btn" data-modal="cueModal"><span class="dot" style="margin:0"></span>Open the reveal cue sheet</button></div>
+    </div>
+  </div>
+  <div class="modal" id="cueModal"><div class="box">
+    <button class="x" aria-label="Close">×</button>
+    <div class="lab">Scene 4 <i>Reveal cue sheet</i></div>
+    <h2 style="font-size:50px">One timecode runs everything.</h2>
+    <p style="margin-top:12px;font-size:21px">Screen, lighting, floor light line and score all chase the same timecode. Cue 0 is Adam's "Lights, please." Timings are indicative and locked in rehearsal.</p>
+    <table style="margin-top:28px">
+      <tr><th style="width:80px">Cue</th><th style="width:100px">TC</th><th>Screen</th><th>Light</th><th>Sound</th><th>Camera</th></tr>
+      <tr><td><b>0</b></td><td>+0:00</td><td>Screensaver pulls to black</td><td>Set to 30%, key on hosts only</td><td>Low pulse in</td><td>Wide, locked</td></tr>
+      <tr><td><b>1</b></td><td>+0:01</td><td>Generations 1 to 4 draw, 1.4s each</td><td>Set to 10%</td><td>Score builds</td><td>Slow push on screen</td></tr>
+      <tr><td><b>2</b></td><td>+0:07</td><td>Fifth outline, held 3s</td><td>Hold</td><td>Build peaks</td><td>Push continues</td></tr>
+      <tr><td><b>3</b></td><td>+0:10</td><td>Outline slides off the right edge</td><td>Floor light line: single pulse, screen to car, 1.5s</td><td>Hit, then cut</td><td>Low floor angle</td></tr>
+      <tr><td><b>4</b></td><td>+0:12</td><td>Black</td><td>Total blackout. Cover pulled</td><td>2s silence</td><td>Hold</td></tr>
+      <tr><td><b>5</b></td><td>+0:14</td><td>Black</td><td>BMW Iconic Glow grille up, then double-X daytime running lights</td><td>Single low note</td><td>Low front three quarter</td></tr>
+      <tr><td><b>6</b></td><td>+0:20</td><td>Black</td><td>Body sweep, front to rear, 4s</td><td>Score resolves</td><td>Side profile</td></tr>
+      <tr><td><b>7</b></td><td>+0:26</td><td>Harrat plate fades up</td><td>Full set to 100% over 3s</td><td>Full theme</td><td>Wide hero</td></tr>
+      <tr><td><b>8</b></td><td>+0:30</td><td>Harrat holds</td><td>Ambient light strip lights up the cockpit</td><td>Theme under</td><td>Wide, hosts step in</td></tr>
+    </table>
+  </div></div>
+</section>
+
+<!-- WALKTHROUGH -->
+<section class="slide" data-sec="The film" data-t="Scene 5, walkthrough">
+  <div class="lab">Scene 5 <i>Walkthrough</i></div>
+  <h2 style="font-size:60px">Four stops. Every feature working on camera.</h2>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px">
+    <div><img class="fit" style="height:270px" src="assets/img/F16.jpg"><h3 style="margin-top:18px;font-size:24px">01 Front</h3><p style="font-size:19px">The upright front end with the BMW Iconic Glow vertical kidney grille, and the new switchable double-X daytime running lights.</p></div>
+    <div><img class="fit" style="height:270px" src="assets/img/F17.jpg"><h3 style="margin-top:18px;font-size:24px">02 Side</h3><p style="font-size:19px">The BMW Winglet operating the new electrically powered doors, and the automatic soft-close doors if fitted. Classic BMW SAV proportions, Neue Klasse design language, alloy wheels up to 23 inches.</p></div>
+    <div><img class="fit" style="height:270px" src="assets/img/F18.jpg"><h3 style="margin-top:18px;font-size:24px">03 Driver's seat</h3><p style="font-size:19px">BMW Panoramic iDrive: the free-cut Central Display, BMW Panoramic Vision, the BMW 3D Head-Up Display and the multifunction steering wheel. The set dims for the ambient light strip.</p></div>
+    <div><img class="fit" style="height:270px" src="assets/img/F19.jpg"><h3 style="margin-top:18px;font-size:24px">04 Passenger side</h3><p style="font-size:19px">The BMW Passenger Screen, making its debut on the BMW X5, available optionally. Slate, used as a decorative surface by a carmaker for the first time, with glass and X stitching.</p></div>
+  </div>
+  <p style="margin-top:30px;font-size:19px"><b>Behind them:</b> the harrat plate. The brief's local twist lives here, after the reveal, so the car arrives in a landscape that is unmistakably Saudi: volcanic rock, warm light, blue green tones.</p>
+</section>
+
+<!-- CLOSE -->
+<section class="slide" data-sec="The film" data-t="Scene 6, close and CTA">
+  <div class="lab">Scene 6 <i>Close and CTA</i></div>
+  <h2 style="font-size:60px">Coming soon. See it first.</h2>
+  <div class="grid" style="grid-template-columns:1.2fr 1fr;gap:70px;margin-top:44px">
+    <div><img class="fit" src="assets/img/F20.jpg" style="height:420px"><div class="cap"><span class="n">F20</span><span>Wide shot, Ahmad beside the car, speaking to camera.</span></div></div>
+    <div>
+      <div class="quote"><div class="ar">BMW X5 الجديدة قريباً في المملكة. وقبل الكل، تقدر تشوفها بنفسك في عرض خاص بمنطقتك. سجّل الحين واحجز موعدك.</div><div class="en">The new BMW X5 is coming soon to the Kingdom. And before anyone else, you can see it for yourself at a private viewing in your region. Register now and book your slot.</div></div>
+      <img class="fit" src="assets/img/F21.jpg" style="aspect-ratio:16/9;height:auto;margin-top:26px">
+      <div class="cap"><span class="n">F21</span><span>End card: THE NEW BMW X5. Coming soon. Book your private viewing: Central, Western, Eastern, with the booking link.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION SCREEN -->
+<section class="slide section" data-sec="The screen" data-t="The screen">
+  <canvas id="secScreen" width="1920" height="1080" style="position:absolute;inset:0;opacity:.6"></canvas>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.7) 55%,rgba(0,0,0,0) 85%)"></div>
+  <div class="lab">04</div><div class="big">The screen.</div><p class="lead" style="max-width:1050px">One highlight screen. Abstract until the reveal, home after it.</p>
+</section>
+
+<!-- SCREEN SYSTEM -->
+<section class="slide roomy" data-sec="The screen" data-t="Screen system">
+  <div class="lab">04.1 <i>Screen system</i></div>
+  <h2 style="font-size:58px">Three states, one story.</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px">
+    <div><img class="frame" src="assets/img/S1.jpg" style="height:300px;object-fit:cover"><h3 style="margin-top:22px;font-size:28px">Screensaver</h3><p>Scenes 1 to 3. One slow abstract loop in the reveal language. Low in the cold open, full from the intro.</p></div>
+    <div><img class="frame" src="assets/img/F11.jpg" style="height:300px;object-fit:cover"><h3 style="margin-top:22px;font-size:28px">Five generations</h3><p>Scene 4. E53, E70, F15, G05, then the new car in silhouette. The last one leaves the screen, then black.</p></div>
+    <div><img class="frame" src="assets/img/HARRAT.jpg" style="height:300px;object-fit:cover"><h3 style="margin-top:22px;font-size:28px">Home</h3><p>Scenes 5 and 6. The harrat backplate: Saudi volcanic fields at dusk, barely moving.</p></div>
+  </div>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:60px;margin-top:56px">
+    <p style="font-size:22px"><b>Logo rule.</b> No BMW logo on the screen in any state. The 3D logo lives on the static wall only, one per sightline, as the brief requires.</p>
+    <p style="font-size:22px"><b>Spec.</b> One screensaver loop, the generations sequence and the harrat plate, all timecoded. The media day backplate is a still from the global DAM.</p>
+  </div>
+</section>
+
+<!-- SCREENSAVER -->
+<section class="slide" data-sec="The screen" data-t="The screensaver">
+  <div class="lab">04.2 <i>The screensaver</i></div>
+  <div style="display:flex;gap:60px;margin-top:6px">
+    <div style="flex:none;width:1120px">
+      <div class="ss" style="height:630px">
+        <img src="assets/img/S1.jpg"><img src="assets/img/S2.jpg"><img src="assets/img/S3.jpg"><img src="assets/img/S4.jpg"><img src="assets/img/S5.jpg"><img src="assets/img/S6.jpg"><img src="assets/img/S7.jpg">
+      </div>
+      <p style="font-size:15px;color:var(--dim);margin-top:12px">Preview: the reveal storyboard frames in sequence. The final loop is animated from these frames.</p>
+    </div>
+    <div style="flex:1">
+      <h2 style="font-size:52px">One loop, in the reveal language.</h2>
+      <p style="margin-top:20px;font-size:21px">A single slow, abstract loop carries everything before the reveal. It is built from the reveal storyboard frames and animated into a seamless 90 second loop, so the room always has movement without competing with the conversation.</p>
+      <table style="margin-top:26px">
+        <tr><td><b>Cold open</b></td><td>About 20% brightness, slowed</td></tr>
+        <tr><td><b>Intro and interview</b></td><td>Full brightness, slow</td></tr>
+        <tr><td><b>"Lights, please"</b></td><td>Pulls to black, the generations begin</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(7,1fr);gap:12px;margin-top:26px">
+    <img class="fit" style="height:62px" src="assets/img/S1.jpg"><img class="fit" style="height:62px" src="assets/img/S2.jpg"><img class="fit" style="height:62px" src="assets/img/S3.jpg"><img class="fit" style="height:62px" src="assets/img/S4.jpg"><img class="fit" style="height:62px" src="assets/img/S5.jpg"><img class="fit" style="height:62px" src="assets/img/S6.jpg"><img class="fit" style="height:62px" src="assets/img/S7.jpg"></div>
+</section>
+
+<!-- SECTION LIVE -->
+<section class="slide section" data-sec="Going live" data-t="Going live">
+  <div class="shard" style="width:120px;height:1300px;left:1500px;top:-110px;opacity:.85"></div>
+  <div class="shard d" style="width:260px;height:1300px;left:1700px;top:-110px"></div>
+  <div class="lab">05</div>
+  <div class="big">Going live.</div>
+  <p class="lead" style="max-width:1050px">Shot first, streamed as a premiere. The countdown, the signal and the chat.</p>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="slide" data-sec="Going live" data-t="The countdown">
+  <div class="ss" style="position:absolute;inset:0;border:0;opacity:.35">
+    <img src="assets/img/S3.jpg"><img src="assets/img/S4.jpg"><img src="assets/img/S1.jpg"><img src="assets/img/S5.jpg"><img src="assets/img/S2.jpg"><img src="assets/img/S6.jpg"><img src="assets/img/S7.jpg">
+  </div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(0,0,0,.35) 0%,rgba(0,0,0,.9) 70%)"></div>
+  <div style="position:relative;z-index:2">
+    <div class="lab">05.1 <i>The countdown</i></div>
+    <h2 style="font-size:58px">Nobody joins a black screen.</h2>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:290px;text-align:center;z-index:2">
+    <p style="font-size:30px;color:#fff;font-weight:300">The livestream will begin in</p>
+    <div class="cd" data-cd="600">10:00</div>
+    <p class="ar" style="font-size:30px;color:var(--mute)">يبدأ البث المباشر خلال</p>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:28px;position:absolute;left:120px;right:120px;bottom:100px;z-index:2">
+    <div class="card" style="background:rgba(7,9,13,.85)"><div class="num">Ten minutes early</div><p style="margin-top:12px;font-size:20px">Every platform goes live 10 minutes before the film, straight into this countdown with a low ambient score.</p></div>
+    <div class="card" style="background:rgba(7,9,13,.85)"><div class="num">Same on every platform</div><p style="margin-top:12px;font-size:20px">English and Arabic, 16:9 for YouTube and X, 9:16 for Instagram. The booking link is pinned before the film starts.</p></div>
+    <div class="card" style="background:rgba(7,9,13,.85)"><div class="num">Announced before</div><p style="margin-top:12px;font-size:20px">An IG story countdown sticker from three days out, so followers get a reminder the moment it starts. YouTube's Premiere page counts down too.</p></div>
+  </div>
+</section>
+
+<!-- SIGNAL -->
+<section class="slide roomy" data-sec="Going live" data-t="How the signal travels">
+  <div class="lab">05.2 <i>How the signal travels</i></div>
+  <h2 style="font-size:58px">One master, three platforms, one control room.</h2>
+  <svg width="1680" height="380" viewBox="0 0 1680 380" style="margin-top:50px;display:block">
+    <defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#7cc4ff"/></linearGradient></defs>
+    <g font-family="BMWNext" fill="#fff">
+      <rect x="0" y="130" width="260" height="120" rx="4" fill="#07090d" stroke="rgba(255,255,255,.2)"/>
+      <text x="24" y="178" font-size="24" font-weight="400">Masters</text><text x="24" y="210" font-size="17" fill="rgba(255,255,255,.55)">Countdown, 16:9 film,</text><text x="24" y="232" font-size="17" fill="rgba(255,255,255,.55)">9:16 IG cut</text>
+      <rect x="380" y="130" width="300" height="120" rx="4" fill="#07090d" stroke="#7cc4ff"/>
+      <text x="404" y="178" font-size="24" font-weight="400">Playout</text><text x="404" y="210" font-size="17" fill="rgba(255,255,255,.55)">Main and backup machine,</text><text x="404" y="232" font-size="17" fill="rgba(255,255,255,.55)">countdown then film</text>
+      <rect x="800" y="130" width="300" height="120" rx="4" fill="#07090d" stroke="rgba(255,255,255,.2)"/>
+      <text x="824" y="178" font-size="24" font-weight="400">Encode and route</text><text x="824" y="210" font-size="17" fill="rgba(255,255,255,.55)">One stream per platform.</text><text x="824" y="232" font-size="17" fill="rgba(255,255,255,.55)">Wired line plus 5G backup</text>
+      <rect x="1240" y="10" width="440" height="100" rx="4" fill="#07090d" stroke="rgba(255,255,255,.2)"/>
+      <text x="1264" y="52" font-size="23" font-weight="400">YouTube Premiere</text><text x="1264" y="82" font-size="17" fill="rgba(255,255,255,.55)">Scheduled, with its own countdown page</text>
+      <rect x="1240" y="140" width="440" height="100" rx="4" fill="#07090d" stroke="rgba(255,255,255,.2)"/>
+      <text x="1264" y="182" font-size="23" font-weight="400">Instagram Live</text><text x="1264" y="212" font-size="17" fill="rgba(255,255,255,.55)">Vertical 9:16 version</text>
+      <rect x="1240" y="270" width="440" height="100" rx="4" fill="#07090d" stroke="rgba(255,255,255,.2)"/>
+      <text x="1264" y="312" font-size="23" font-weight="400">X broadcast</text><text x="1264" y="342" font-size="17" fill="rgba(255,255,255,.55)">Scheduled broadcast, 16:9</text>
+    </g>
+    <g stroke="url(#lg)" stroke-width="3" fill="none" style="filter:drop-shadow(0 0 6px #7cc4ff)">
+      <path d="M262 190 H378"/><path d="M682 190 H798"/>
+      <path d="M1102 190 C1170 190 1170 60 1238 60"/><path d="M1102 190 H1238"/><path d="M1102 190 C1170 190 1170 320 1238 320"/>
+    </g>
+  </svg>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:40px;margin-top:50px">
+    <p style="font-size:22px"><b>YouTube</b> runs as a true Premiere: scheduled, played to everyone at once, and the home of the evergreen video afterwards.</p>
+    <p style="font-size:22px"><b>Instagram</b> goes out as a Live, fed with its own vertical version of the film, subtitles placed for the phone.</p>
+    <p style="font-size:22px"><b>X</b> goes out as a scheduled broadcast from the same feed. Live chat on all three.</p>
+  </div>
+  <div style="margin-top:44px"><button class="btn" data-modal="liveModal"><span class="dot" style="margin:0"></span>How we go live: software and steps</button></div>
+  <div class="modal" id="liveModal"><div class="box" style="padding:48px 60px">
+    <button class="x" aria-label="Close">×</button>
+    <div class="lab">05.2 <i>How we go live</i></div>
+    <h2 style="font-size:46px">Software, kit and steps.</h2>
+    <p style="margin-top:10px;font-size:19px">The film is pre-recorded, so the stream can run from a control room anywhere with a strong connection, including Dubai.</p>
+    <div class="lsg">
+      <div>
+        <h3 style="font-size:24px">What we need</h3>
+        <table>
+          <tr><td><b>Playout</b></td><td>vMix on a main and a mirrored backup machine. Plays the countdown, then the film, and sends a separate stream to each platform.</td></tr>
+          <tr><td><b>YouTube</b></td><td>YouTube Studio. The film is uploaded and scheduled as a Premiere, with the 10 minute countdown at its head.</td></tr>
+          <tr><td><b>Instagram</b></td><td>Instagram Live Producer on desktop, which gives the stream key for the 9:16 output.</td></tr>
+          <tr><td><b>X</b></td><td>X Media Studio Producer, a scheduled broadcast with its own stream key. Access confirmed on the account a week before.</td></tr>
+          <tr><td><b>Connection</b></td><td>Wired line with at least 50 Mbps upload, plus a bonded 5G backup.</td></tr>
+          <tr><td><b>Monitoring</b></td><td>One screen per platform watching the public stream, and the chat team in each platform's own tools.</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3 style="font-size:24px">Steps</h3>
+        <ol class="steps" style="margin-top:12px">
+          <li>Lock the masters: 16:9 and 9:16, subtitles burned in, sound mixed for streaming.</li>
+          <li>Set up the three streams and load the keys into vMix. Pin the booking link in each description.</li>
+          <li>Rehearse end to end two days before, on private or test accounts.</li>
+          <li>One hour before: control room on, backup machine mirrored, speed test.</li>
+          <li>Ten minutes before: go live on the countdown. The YouTube Premiere counts down on its own.</li>
+          <li>On air: the film plays. The chat team posts, pins and answers.</li>
+          <li>After the film: hold the end card, then end the streams. If the Q&amp;A runs, hold for 15 minutes.</li>
+          <li>Afterwards: replays stay up on all three, the YouTube countdown is trimmed, the link stays pinned.</li>
+        </ol>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- OPTIONAL Q&A -->
+<section class="slide" data-sec="Going live" data-t="Optional: live Q&amp;A">
+  <div class="lab">05.3 <i>Live Q&amp;A</i> <span class="tag w">Optional</span></div>
+  <h2 style="font-size:56px">Answers written before anyone asks.</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:24px;margin-top:22px">
+    <p style="font-size:19px"><b>In the film.</b> One short line from Ahmad before the close invites questions into the chat, recorded as a pickup so it can be dropped.</p>
+    <p style="font-size:19px"><b>In the chat.</b> The brand account answers on all three platforms, Arabic first, from an approved answer bank.</p>
+    <p style="font-size:19px"><b>Before the day.</b> An IG "Ask" sticker four to six days out so the bank starts from real questions: <span class="ar" style="color:#fff;display:block;text-align:left;margin-top:4px">اسألوا عن X5 الجديدة</span></p>
+  </div>
+  <table style="margin-top:20px" class="tight">
+    <tr><th style="width:430px">Likely question</th><th>Answer</th><th style="width:180px">Status</th></tr>
+    <tr><td><b>When can I see it in person?</b></td><td>Private viewings are coming to the Central, Western and Eastern regions. Register at the link in our bio to book your slot.</td><td>From script</td></tr>
+    <tr><td><b>How much is it?</b></td><td>Pricing for the Kingdom will be shared soon. Register for a private viewing to hear it first.</td><td>Holding line</td></tr>
+    <tr><td><b>Which engines come to KSA?</b></td><td>[KSA line up to be confirmed by BMW]</td><td>BMW to supply</td></tr>
+    <tr><td><b>What's new in the design?</b></td><td>A powerful, monolithic appearance blending classic BMW SAV proportions with the Neue Klasse design language, with the BMW Iconic Glow vertical kidney grille and new switchable double-X daytime running lights.</td><td>From script</td></tr>
+    <tr><td><b>What is the BMW Winglet?</b></td><td>It operates the new electrically powered doors.</td><td>From script</td></tr>
+    <tr><td><b>What is BMW Panoramic iDrive?</b></td><td>The free-cut Central Display, BMW Panoramic Vision, the BMW 3D Head-Up Display and the multifunction steering wheel, brought together.</td><td>From script</td></tr>
+    <tr><td><b>Does the passenger get a screen?</b></td><td>The BMW Passenger Screen makes its debut on the BMW X5, available optionally.</td><td>From script</td></tr>
+    <tr><td><b>What's the slate trim?</b></td><td>Slate, used as a decorative surface by an automotive manufacturer for the first time.</td><td>From script</td></tr>
+    <tr><td><b>How big are the wheels?</b></td><td>Alloy wheels up to 23 inches.</td><td>From script</td></tr>
+    <tr><td><b>Where is it built?</b></td><td>At the Home of X, BMW Group Plant Spartanburg, where every BMW X5 has been produced since 1999.</td><td>From script</td></tr>
+    <tr><td><b>Which colours?</b></td><td>[KSA colour list to be confirmed by BMW]</td><td>BMW to supply</td></tr>
+  </table>
+</section>
+
+<!-- SECTION PRODUCTION -->
+<section class="slide section" data-sec="Production" data-t="Production">
+  <div class="shard d" style="width:340px;height:1300px;left:1560px;top:-110px"></div>
+  <div class="shard" style="width:40px;height:1300px;left:1480px;top:-110px;opacity:.8"></div>
+  <div class="lab">06</div>
+  <div class="big">Production.</div>
+  <p class="lead" style="max-width:1050px">Reels, stills, shots and deliverables, all captured on the shoot day.</p>
+</section>
+
+<!-- REELS -->
+<section class="slide" data-sec="Production" data-t="Car reels">
+  <div class="lab">06.1 <i>Car reels</i></div>
+  <h2 style="font-size:56px">Two reels, shot on the spot.</h2>
+  <p style="margin-top:10px;font-size:20px">Captured on the same set, between film setups, for the weeks after the launch. 9:16, 15 to 30 seconds each. References show the pace and camera language.</p>
+  <div class="grid" style="grid-template-columns:1.55fr 1fr;gap:70px;margin-top:30px">
+    <div>
+      <h3 style="font-size:30px">Exterior</h3><p style="font-size:19px;margin-top:6px">Jib and slider moves around the body: the BMW Iconic Glow grille and double-X daytime running lights switching on, a light sweep along the profile, the BMW Winglet opening the door, the full width taillights, the wheels.</p>
+      <div style="display:flex;gap:20px;margin-top:22px">
+        <div><video class="vref" style="width:252px;height:448px" muted loop playsinline preload="metadata" src="assets/video/exterior_3.mp4"></video><div class="vcap">Reference 01</div></div>
+        <div style="display:flex;flex-direction:column;gap:0">
+          <video class="vref" style="width:398px;height:210px" muted loop playsinline preload="metadata" src="assets/video/exterior_1.mp4"></video><div class="vcap" style="margin-bottom:6px">Reference 02</div>
+          <video class="vref" style="width:398px;height:210px" muted loop playsinline preload="metadata" src="assets/video/exterior_2.mp4"></video><div class="vcap">Reference 03</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:30px">Interior</h3><p style="font-size:19px;margin-top:6px">The wrap-around cockpit coming alive: the 3D backlit ambient light strip, BMW Panoramic Vision and the Central Display starting up, the steering wheel, slate and X stitching in macro, the BMW Passenger Screen.</p>
+      <div style="margin-top:22px"><video class="vref" style="width:252px;height:448px" muted loop playsinline preload="metadata" src="assets/video/interior_1.mp4"></video><div class="vcap">Reference 01</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STILLS -->
+<section class="slide" data-sec="Production" data-t="Stills">
+  <div class="lab">06.2 <i>Stills</i></div>
+  <h2 style="font-size:56px">The shot list for the stills.</h2>
+  <p style="margin-top:12px;font-size:20px">15 to 20 retouched finals, selected from the list below. Shot on the same set in a dedicated block. Items marked "if fitted" depend on the show car's specification.</p>
+  <div class="grid" style="grid-template-columns:1fr 1fr;gap:70px;margin-top:26px">
+    <div><h3 style="font-size:26px">Exterior</h3><table class="list2">
+      <tr><td>01</td><td><b>Front three quarter</b>, full body, hero</td></tr>
+      <tr><td>02</td><td><b>Rear three quarter</b>, full body</td></tr>
+      <tr><td>03</td><td><b>Side profile</b>, showing the monolithic stance</td></tr>
+      <tr><td>04</td><td><b>Front</b>, straight on, upright front end</td></tr>
+      <tr><td>05</td><td><b>Rear</b>, straight on</td></tr>
+      <tr><td>06</td><td><b>BMW Iconic Glow</b> vertical kidney grille, lit</td></tr>
+      <tr><td>07</td><td><b>Double-X daytime running lights</b>, lit</td></tr>
+      <tr><td>08</td><td><b>BMW Winglet</b>, macro</td></tr>
+      <tr><td>09</td><td><b>Electrically powered door</b> opening, if fitted</td></tr>
+      <tr><td>10</td><td><b>Taillights</b> across the full width, lit</td></tr>
+      <tr><td>11</td><td><b>Alloy wheel</b>, up to 23 inches</td></tr>
+      <tr><td>12</td><td><b>Roofline and glasshouse</b>, high angle</td></tr>
+    </table></div>
+    <div><h3 style="font-size:26px">Interior</h3><table class="list2">
+      <tr><td>13</td><td><b>Wrap-around cockpit</b>, wide from the rear seat</td></tr>
+      <tr><td>14</td><td><b>BMW Panoramic Vision</b> and free-cut Central Display, lit</td></tr>
+      <tr><td>15</td><td><b>BMW 3D Head-Up Display</b>, driver's eye view</td></tr>
+      <tr><td>16</td><td><b>Multifunction steering wheel</b>, detail</td></tr>
+      <tr><td>17</td><td><b>3D backlit ambient light strip</b>, set dimmed</td></tr>
+      <tr><td>18</td><td><b>BMW Passenger Screen</b>, if fitted</td></tr>
+      <tr><td>19</td><td><b>Slate</b> decorative surface, macro</td></tr>
+      <tr><td>20</td><td><b>X stitching</b> in the doors and dashboard</td></tr>
+      <tr><td>21</td><td><b>Seats</b>, quilting and stitching detail</td></tr>
+      <tr><td>22</td><td><b>Glass</b> details and panoramic sunroof</td></tr>
+    </table></div>
+  </div>
+</section>
+
+<!-- SHOT LIST -->
+<section class="slide roomy" data-sec="Production" data-t="Shot list">
+  <div class="lab">06.3 <i>Shot list overview</i></div>
+  <h2 style="font-size:56px">Three cameras, one long take each for the big moments.</h2>
+  <table style="margin-top:36px">
+    <tr><th style="width:280px">Scene</th><th>Key shots</th><th style="width:200px">Cameras</th><th style="width:260px">Pickups</th></tr>
+    <tr><td><b>1 Cold open</b></td><td>Macro cover edge with light sliver, medium covered silhouette, wide set in near darkness</td><td>A on slider</td><td>Extra macro textures</td></tr>
+    <tr><td><b>2 Ahmad intro</b></td><td>Ahmad to camera beside the car, close up on "yet", two shot handshake</td><td>A, B</td><td>Alt delivery of the joke</td></tr>
+    <tr><td><b>3 Interview</b></td><td>Wide two shot on drift, over the shoulder each side, mediums on both</td><td>A, B, C wide</td><td>Cutaways, screen inserts</td></tr>
+    <tr><td><b>4 Reveal</b></td><td>Wide locked, low floor angle on the light line, low front three quarter, side profile sweep, wide hero</td><td>A, B, C, all rolling</td><td>Grille and double-X macros</td></tr>
+    <tr><td><b>5 Walkthrough</b></td><td>Medium front, Winglet operating the door, rear seat view of Panoramic iDrive, Passenger Screen close up</td><td>A handheld, B</td><td>Winglet, slate and stitching macros</td></tr>
+    <tr><td><b>6 Close and CTA</b></td><td>Ahmad to camera beside the car, final high wide</td><td>A, B, jib</td><td>Optional Q&amp;A line</td></tr>
+  </table>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="slide roomy" data-sec="Production" data-t="Deliverables">
+  <div class="lab">06.4 <i>Deliverables</i></div>
+  <h2 style="font-size:56px">One shoot, a library for the weeks after.</h2>
+  <table style="margin-top:40px">
+    <tr><th>Deliverable</th><th style="width:520px">Format</th></tr>
+    <tr><td><b>Hero launch film</b></td><td>16:9, plus a 9:16 version for Instagram Live</td></tr>
+    <tr><td><b>Countdown</b>, 10 minutes</td><td>16:9 and 9:16</td></tr>
+    <tr><td><b>Cutdowns</b>, 60s, 30s, 15s</td><td>9:16 and 16:9</td></tr>
+    <tr><td><b>Car reels</b>, exterior and interior</td><td>9:16</td></tr>
+    <tr><td><b>Photography</b>, 15 to 20 finals</td><td>Retouched stills</td></tr>
+    <tr><td><b>Screen content</b>: screensaver loop, generations, harrat plate</td><td>Timecoded, to the screen's resolution</td></tr>
+    <tr><td><b>Live kit</b>: answer bank and story assets, if the Q&amp;A runs</td><td>Shared doc and stories</td></tr>
+  </table>
+</section>
+
+<!-- PRODUCTION REQUIREMENTS -->
+<section class="slide" data-sec="Production" data-t="Production requirements">
+  <div class="lab">06.5 <i>Production requirements</i></div>
+  <h2 style="font-size:56px">Which shot, where in the script.</h2>
+  <p style="margin-top:12px;font-size:21px;max-width:1300px">The full guide for the production house: how each scene is covered, the equipment for the day, and how the shoot is watched live from Dubai.</p>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:24px;margin-top:44px">
+    <div class="card"><div class="num">Shoot</div><p style="margin-top:12px;font-size:24px;color:#fff">Mon 2 Nov 2026</p></div>
+    <div class="card"><div class="num">Location</div><p style="margin-top:12px;font-size:24px;color:#fff">Sulaymaniyah showroom, Riyadh</p></div>
+    <div class="card"><div class="num">Live</div><p style="margin-top:12px;font-size:24px;color:#fff">Sun 8 Nov, 8:30pm KSA</p></div>
+    <div class="card"><div class="num">Viewing</div><p style="margin-top:12px;font-size:24px;color:#fff">Remote, from Dubai</p></div>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:40px;margin-top:44px">
+    <div><div class="rule" style="width:60px;margin-bottom:20px"></div><h3>Keep the camera moving</h3><p style="font-size:20px">Jib and slider for every shot of the car. Locked shots only for dialogue and the reveal wide.</p></div>
+    <div><div class="rule" style="width:60px;margin-bottom:20px"></div><h3>Shot map and kit</h3><p style="font-size:20px">Wides, mids, close-ups and sweeps for every scene, with must have and good to have equipment.</p></div>
+    <div><div class="rule" style="width:60px;margin-bottom:20px"></div><h3>Remote viewing</h3><p style="font-size:20px">Every camera live to a private link, call time to wrap, with talkback to the director.</p></div>
+  </div>
+  <div style="margin-top:50px;display:flex;gap:16px"><button class="btn" data-doc="prodreq"><span class="dot" style="margin:0"></span>Open the production requirements</button><button class="btn" data-doc-tab="prodreq" style="border-color:rgba(255,255,255,.3);box-shadow:none">Open in a new tab</button></div>
+  <div class="modal full" id="prodreqModal"><div class="box"><button class="x" aria-label="Close">×</button><iframe title="Production requirements"></iframe></div></div>
+</section>
+
+<!-- END -->
+<section class="slide" data-sec="End" data-t="It's all yours">
+  <canvas id="endCanvas" width="1920" height="1080" style="position:absolute;inset:0;opacity:.8"></canvas>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 30%,rgba(0,0,0,.8) 80%)"></div>
+  <div style="position:absolute;left:0;right:0;bottom:170px;text-align:center;z-index:2">
+    <h2 style="font-size:84px;font-weight:100;max-width:none">It's all yours.</h2>
+    <p class="ar" style="font-size:30px;color:#fff;margin-top:16px">BMW X5 الجديدة كلياً</p>
+  </div>
+</section>
+
+</div></div>
+<div id="prog"></div>
+<div id="nav"><button id="bh" title="First slide (Home)">First</button><button id="bm" class="sec" title="Sections (M)">Sections</button><button id="bp">Prev</button><span id="cnt" style="font:400 14px BMWNext,Arial;color:#888;padding:8px 6px"></span><button id="bn">Next</button></div>
+<div id="menu"><div class="top"><b>Contents</b><button id="mclose">Close</button></div><div class="cols" id="mcols"></div></div>
+<script src="assets/js/screen.js"></script>
+<script>
+(function(){
+  const stage=document.getElementById('stage');
+  function fit(){const s=Math.min(innerWidth/1920,innerHeight/1080);stage.style.transform='scale('+s+')';}
+  addEventListener('resize',fit);fit();
+  const slides=[...document.querySelectorAll('.slide')];
+  const total=slides.length;
+  slides.forEach((s,i)=>{
+    if(i===0)return;
+    const h=document.createElement('div');h.className='hdr';
+    h.innerHTML='<span><b>The new BMW X5</b>&nbsp;&nbsp; KSA live presentation</span><span>'+s.dataset.sec+'&nbsp;&nbsp; '+String(i+1).padStart(2,'0')+' / '+total+'</span>';
+    s.appendChild(h);
+  });
+  // contents menu
+  const menu=document.getElementById('menu'),mcols=document.getElementById('mcols');
+  const groups=[];slides.forEach((s,i)=>{const g=s.dataset.sec;if(!groups.length||groups[groups.length-1].name!==g)groups.push({name:g,items:[]});groups[groups.length-1].items.push(i);});
+  groups.forEach(g=>{const d=document.createElement('div');d.innerHTML='<h4>'+g.name+'</h4>';g.items.forEach(i=>{const a=document.createElement('a');a.dataset.i=i;a.innerHTML='<span>'+String(i+1).padStart(2,'0')+'</span>'+(slides[i].dataset.t||'');a.onclick=()=>{closeMenu();show(i);};d.appendChild(a);});mcols.appendChild(d);});
+  function openMenu(){[...mcols.querySelectorAll('a')].forEach(a=>a.classList.toggle('cur',+a.dataset.i===cur));menu.classList.add('open');}
+  function closeMenu(){menu.classList.remove('open');}
+  document.getElementById('bm').onclick=()=>menu.classList.contains('open')?closeMenu():openMenu();
+  document.getElementById('mclose').onclick=closeMenu;
+  // modals
+  function closeModals(){document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open'));}
+  document.querySelectorAll('[data-modal]').forEach(b=>b.onclick=e=>{e.stopPropagation();document.getElementById(b.dataset.modal).classList.add('open');});
+  document.querySelectorAll('.modal').forEach(m=>{m.onclick=e=>{if(e.target===m||e.target.classList.contains('x'))m.classList.remove('open');};});
+  const docCache={};
+  function docURL(k){return {prodreq:'production-requirements.html'}[k];}
+  document.querySelectorAll('[data-doc]').forEach(b=>b.onclick=e=>{e.stopPropagation();const k=b.dataset.doc,m=document.getElementById(k+'Modal'),f=m.querySelector('iframe');if(!f.getAttribute('src'))f.src=docURL(k);m.classList.add('open');});
+  document.querySelectorAll('[data-doc-tab]').forEach(b=>b.onclick=e=>{e.stopPropagation();window.open(docURL(b.dataset.docTab),'_blank');});
+  // countdowns
+  let cdStart=performance.now();
+  function cdTick(){const el=(performance.now()-cdStart)/1000;document.querySelectorAll('.slide.on [data-cd]').forEach(c=>{const r=Math.max(0,+c.dataset.cd-Math.floor(el));c.textContent=String(Math.floor(r/60)).padStart(2,'0')+':'+String(r%60).padStart(2,'0');});}
+  setInterval(cdTick,250);
+  let cur=0;
+  try{const k=parseInt(location.hash.slice(1));if(k>0&&k<=total)cur=k-1;}catch(e){}
+  function show(i){closeModals();cur=Math.max(0,Math.min(total-1,i));slides.forEach((s,j)=>s.classList.toggle('on',j===cur));
+    cdStart=performance.now();cdTick();
+    document.querySelectorAll('video').forEach(v=>{if(slides[cur].contains(v)){try{v.play()}catch(e){}}else v.pause();});
+    document.getElementById('cnt').textContent=(cur+1)+' / '+total;document.getElementById('prog').style.width=((cur+1)/total*100)+'%';
+    try{history.replaceState(null,'','#'+(cur+1));}catch(e){}}
+  addEventListener('keydown',e=>{
+    if(e.key==='Escape'){closeModals();closeMenu();return;}
+    if(e.key==='m'||e.key==='M'){menu.classList.contains('open')?closeMenu():openMenu();return;}
+    if(menu.classList.contains('open'))return;
+    if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(cur+1);}
+    if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(cur-1);}
+    if(e.key==='Home'){e.preventDefault();show(0);} if(e.key==='End'){e.preventDefault();show(total-1);}
+  });
+  document.getElementById('bn').onclick=()=>show(cur+1);document.getElementById('bp').onclick=()=>show(cur-1);document.getElementById('bh').onclick=()=>show(0);
+  let tx=null;addEventListener('touchstart',e=>tx=e.touches[0].clientX);addEventListener('touchend',e=>{if(tx==null||menu.classList.contains('open'))return;const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)show(cur+(d<0?1:-1));tx=null;});
+  show(cur);
+  const cv=id=>{const c=document.getElementById(id);return c?{c,x:c.getContext('2d')}:null};
+  const cover=cv('coverCanvas'),sec=cv('secScreen'),end=cv('endCanvas');
+  const t0=performance.now();
+  function loop(now){
+    const t=(now-t0)/1000;const s=slides[cur];
+    if(cover&&s.contains(cover.c)){cover.x.fillStyle='#000';cover.x.fillRect(0,0,1920,1080);cover.x.save();cover.x.translate(0,-120);SCR.signature(cover.x,1920,1080,t);cover.x.restore();}
+    if(sec&&s.contains(sec.c)){sec.x.fillStyle='#000';sec.x.fillRect(0,0,1920,1080);SCR.shards(sec.x,1920,1080,t,.8);}
+    if(end&&s.contains(end.c)){end.x.fillStyle='#000';end.x.fillRect(0,0,1920,1080);end.x.save();end.x.translate(0,-140);SCR.signature(end.x,1920,1080,t+3);end.x.restore();}
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
