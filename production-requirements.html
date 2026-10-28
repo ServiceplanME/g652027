@@ -176,10 +176,10 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-top:20px;font-si
       <h3>The car</h3><p class="sub">A single soft light ceiling over the car, for long, clean reflections on the paint.</p>
       <ul class="list">
         <li><span><b>Overhead frame, 20 x 20 ft</b> with full grid cloth, on 4 heavy-duty wind-up stands or a ground-supported truss goalpost</span><em>the scrim over the car</em></li>
-        <li><span><b>4 large LED panels</b> above the frame, firing down through it (ARRI SkyPanel S60-C or Aputure Nova P600c)</span><em>the light ceiling</em></li>
+        <li><span><b>4 large LED panels</b> above the frame, firing down through it (ARRI SkyPanel S60-C or Aputure Nova P600c), smoothly dimmable from 0%</span><em>the light ceiling, and the slow brighten in the reveal</em></li>
         <li><span><b>2 black solids, 12 x 12 ft</b>, or 4 floppies</span><em>dark contour lines on the paint</em></li>
-        <li><span><b>8 battery LED tubes</b> (Astera Titan Tube)</span><em>edge light, body sweep, the line of light on the floor</em></li>
-        <li><span><b>1 hard light with projection optic</b> (Aputure 600d + Spotlight Max, or ARRI Orbiter)</span><em>grazes the cover during the pull</em></li>
+        <li><span><b>8 battery LED tubes</b> (Astera Titan Tube)</span><em>edge light and the body sweep</em></li>
+        <li><span><b>1 hard light with projection optic</b> (Aputure 600d + Spotlight Max, or ARRI Orbiter)</span><em>the beam that sweeps the body in the dark</em></li>
         <li><span><b>2 small accent LEDs</b> (Astera AX3 or Aputure MC Pro)</span><em>wheels, details, interior</em></li>
         <li><span><b>Battery maintainer</b> for the show car</span><em>lights on for hours</em></li>
       </ul>
@@ -203,7 +203,7 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-top:20px;font-si
         <li><span><b>Haze machine</b> (venue permitting)</span><em>light beams read on camera</em></li>
         <li><span><b>Half grid, 12 x 12 ft</b></span><em>second car angle without moving the frame</em></li>
         <li><span><b>4 extra LED tubes</b></span><em>more reflections and edge lines</em></li>
-        <li><span><b>Addressable LED pixel tape</b></span><em>alternative for the floor line of light</em></li>
+        <li><span><b>Blackout drapes</b> for showroom windows and glass</span><em>true darkness for the reveal</em></li>
       </ul>
     </div>
     <div class="card">
@@ -285,12 +285,15 @@ const S=[
  {n:'4 · Q&A',t:'Indicative, about 3:00',m:[1,2,2,0,1],note:'Four questions. Two seats, covered car between them.',
   shots:[['m','Two-shot of both hosts with the covered car between them. Main angle.'],['c','Close-up of each host on their answers.'],['w','Wide with the screensaver behind them, to cut away to.']],
   sweep:'Slow drift on the dolly on both cameras. Barely noticeable, never still.'},
- {n:'5 · Digital vehicle reveal',t:'Indicative, about 1:00',m:[2,0,2,2,2],note:'Generations on the screen, line of light, cover pulled, the car lights up.',
-  shots:[['w','Locked hero wide for the whole reveal. Do not move this camera.'],['c','Low floor angle on the line of light travelling to the car.'],['c','Close-up on the cover sliding off the bodywork in one slow pull.'],['c','Straight-on: BMW Iconic Glow kidney grille, then the double-X daytime running lights switching on. Plus a macro of one double-X light.']],
-  sweep:'Slider along the cover as it is pulled, then the jib sweeps along the car as the light runs front to rear.'},
+ {n:'5 · Digital vehicle reveal',t:'Indicative, about 1:00',m:[2,0,2,2,2],note:'Generations on the screen, complete darkness, the grille lights up, the room brightens.',
+  shots:[['w','Locked hero wide for the whole reveal. Do not move this camera.'],['c','Straight-on: BMW Iconic Glow kidney grille, then the double-X daytime running lights switching on, out of black.'],['c','Macro of one double-X light. Front three quarter with only the car\'s lights.'],['w','Rear three quarter as the overhead light ceiling fades up.']],
+  sweep:'Slider along the body as the light sweeps, then the jib rises to the wide as the room reaches full brightness.'},
  {n:'6 · Driving experience',t:'Indicative, about 45s',m:[0,0,0,0,0],note:'Supplied driving footage, cut in the edit. Nothing to shoot on the day.',
   shots:[['w','No shots needed. Footage supplied.']],sweep:''},
- {n:'7 · Closing',t:'Indicative, about 30s',m:[2,2,1,0,2],note:'Ahmed beside the revealed car, thanks and close.',
+ {n:'7 · Walkthrough',t:'Indicative, about 1:40',m:[1,1,1,2,2],note:'Ahmed leads four stops around and inside the car.',
+  shots:[['c','Front: BMW Iconic Glow grille and double-X daytime running lights.'],['c','Side: the BMW Winglet operating the electrically powered door; the alloy wheels, up to 23 inches.'],['w','Driver\'s seat: BMW Panoramic iDrive shot from the back seat, set dimmed for the ambient light strip.'],['c','Passenger side: BMW Passenger Screen, slate, glass and X stitching.']],
+  sweep:'Slider or gimbal glides between each stop, so the walkthrough feels like one move.'},
+ {n:'8 · Closing',t:'Indicative, about 30s',m:[2,2,1,0,2],note:'Ahmed beside the revealed car, thanks and close.',
   shots:[['m','Ahmed beside the car, to camera. Main angle.'],['w','Final wide of the host and the car.']],
   sweep:'Jib pulls up and back to a high wide of the room and the car. Last shot of the film.'}];
 const K={w:['w','Wide'],m:['m','Mid'],c:['c','Close-up']};
