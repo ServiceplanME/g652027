@@ -5,7 +5,7 @@ Static site. No build step.
 ## Structure
 
 - `index.html`: the presentation
-- `production-requirements.html`: production requirements, opened from slide 06.5
+- `production-requirements.html`: production requirements, opened from slide 06.4
 - `assets/fonts`: BMW Type Next
 - `assets/img`: storyboard frames, screensaver keyframes, set mockup, logo
 - `assets/video`: reel references

@@ -114,6 +114,7 @@ canvas{display:block}
 .list2 td{padding:9px 14px 9px 0;font-size:18px}
 .list2 td:first-child{width:46px;color:var(--cyan);font-weight:700;font-size:15px}
 </style>
+<script>function phImg(el){if(!el.dataset.t){el.dataset.t=1;el.src=el.src.replace(/\.png$/,'.jpg');return;}var d=document.createElement('div');d.className='ph';d.style.height=el.style.height;d.innerHTML='<b style="color:#fff;font-weight:400">'+el.dataset.n+'</b><span>Frame in progress</span>';el.replaceWith(d);}</script>
 </head>
 <body>
 <div id="viewport"><div id="stage">
@@ -170,131 +171,119 @@ canvas{display:block}
 <!-- RUN OF SHOW -->
 <section class="slide" data-sec="The film" data-t="Run of show">
   <div class="lab">03.1 <i>Run of show</i></div>
-  <h2>Six segments, around five minutes.</h2>
-  <p class="lead" style="font-size:24px">Timings are indicative only, to show the shape of the film. Final durations are set in the edit.</p>
+  <h2>Seven segments, around seven minutes.</h2>
+  <p class="lead" style="font-size:24px">Following the approved script. Timings are indicative only, to show the shape of the film. Final durations are set in the edit.</p>
   <div class="tl">
-    <div style="flex:25"><div class="t">&nbsp;</div><div class="n">Cold open</div></div>
-    <div style="flex:25"><div class="t">&nbsp;</div><div class="n">Host intro</div></div>
-    <div style="flex:90"><div class="t">&nbsp;</div><div class="n">Interview, 3 questions</div></div>
-    <div style="flex:55"><div class="t">&nbsp;</div><div class="n">The reveal</div></div>
-    <div style="flex:100"><div class="t">&nbsp;</div><div class="n">Walkthrough, 4 stops</div></div>
-    <div style="flex:22"><div class="t">&nbsp;</div><div class="n">Close</div></div>
+    <div style="flex:40"><div class="t">&nbsp;</div><div class="n">Opening</div></div>
+    <div style="flex:60"><div class="t">&nbsp;</div><div class="n">Welcome</div></div>
+    <div style="flex:30"><div class="t">&nbsp;</div><div class="n">Adam</div></div>
+    <div style="flex:180"><div class="t">&nbsp;</div><div class="n">Q&amp;A, 4 questions</div></div>
+    <div style="flex:60"><div class="t">&nbsp;</div><div class="n">Reveal</div></div>
+    <div style="flex:45"><div class="t">&nbsp;</div><div class="n">Drive</div></div>
+    <div style="flex:30"><div class="t">&nbsp;</div><div class="n">Close</div></div>
   </div>
   <table style="margin-top:50px">
-    <tr><th>Segment</th><th>Indicative length</th><th>Language</th><th>Subtitles</th><th>Screen</th></tr>
-    <tr><td><b>1 Cold open</b></td><td>About 25s</td><td>Arabic VO</td><td>English</td><td>Screensaver, low</td></tr>
-    <tr><td><b>2 Ahmad intro and handover</b></td><td>About 25s</td><td>Arabic, then English</td><td>English / Arabic</td><td>Screensaver, full</td></tr>
-    <tr><td><b>3 Interview, 3 questions</b></td><td>About 1:30</td><td>English</td><td>Arabic</td><td>Screensaver, full</td></tr>
-    <tr><td><b>4 Reveal</b></td><td>About 55s</td><td>Music, 2 lines</td><td>Both</td><td>Five generations, then home</td></tr>
-    <tr><td><b>5 Walkthrough, 4 stops</b></td><td>About 1:40</td><td>Arabic</td><td>English</td><td>Harrat home plate</td></tr>
-    <tr><td><b>6 Close and CTA</b></td><td>About 20s</td><td>Arabic</td><td>English</td><td>Harrat, then end card</td></tr>
+    <tr><th>Segment</th><th>On camera</th><th>Indicative length</th><th>Screen</th></tr>
+    <tr><td><b>1 Opening introduction</b></td><td>Ahmed Alshehri</td><td>About 40s</td><td>Screensaver</td></tr>
+    <tr><td><b>2 Welcome</b></td><td>Mohannad Al Dubayan, Central Region Sales Manager, MYNM</td><td>About 1:00</td><td>Screensaver</td></tr>
+    <tr><td><b>3 Introduction of Adam, chat invitation</b></td><td>Ahmed Alshehri, Adam Flint</td><td>About 30s</td><td>Screensaver</td></tr>
+    <tr><td><b>4 Q&amp;A</b></td><td>Ahmed Alshehri with Adam Flint, Managing Director of BMW, MYNM</td><td>About 3:00</td><td>Screensaver</td></tr>
+    <tr><td><b>5 Digital vehicle reveal</b></td><td>Ahmed Alshehri, then the car</td><td>About 1:00</td><td>Five generations, then home</td></tr>
+    <tr><td><b>6 Driving experience footage</b></td><td>Supplied footage</td><td>About 45s</td><td>Full frame in the edit</td></tr>
+    <tr><td><b>7 Closing</b></td><td>Ahmed Alshehri</td><td>About 30s</td><td>City, then end card</td></tr>
   </table>
 </section>
 
-<!-- SCENES 1-2 -->
-<section class="slide" data-sec="The film" data-t="Scenes 1 and 2">
-  <div class="lab">Scenes 1 and 2 <i>Cold open and intro</i></div>
-  <h2 style="font-size:60px">Darkness first. Then a host, a guest, and a joke.</h2>
-  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:34px;gap:20px">
-    <div><img class="fit" style="height:215px" src="assets/img/F1.jpg"><div class="cap"><span class="n">F1</span><span>Macro on the cover edge. A sliver of light crosses the fabric.</span></div></div>
-    <div><img class="fit" style="height:215px" src="assets/img/F2.jpg"><div class="cap"><span class="n">F2</span><span>Since 1999 / منذ ١٩٩٩</span></div></div>
-    <div><img class="fit" style="height:215px" src="assets/img/F3.jpg"><div class="cap"><span class="n">F3</span><span>The fifth generation / الجيل الخامس</span></div></div>
-    <div><img class="fit" style="height:215px" src="assets/img/F4.jpg"><div class="cap"><span class="n">F4</span><span>Ahmad beside the covered car, Arabic then English.</span></div></div>
-    <div><img class="fit" style="height:215px" src="assets/img/F5.jpg"><div class="cap"><span class="n">F5</span><span>"Our guest doesn't speak Arabic... yet."</span></div></div>
-    <div><img class="fit" style="height:215px" src="assets/img/F6.jpg"><div class="cap"><span class="n">F6</span><span>"Adam, welcome." Super: Adam Flint, Managing Director.</span></div></div>
+<!-- SCENES 1-3 -->
+<section class="slide" data-sec="The film" data-t="Opening and welcome">
+  <div class="lab">Scenes 1 to 3 <i>Opening, welcome, introduction of Adam</i></div>
+  <h2 style="font-size:60px">A warm welcome, then the hosts take their seats.</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:30px;gap:20px">
+    <div><img class="fit" style="height:215px" src="assets/img/F3.jpg"><div class="cap"><span class="n">F3</span><span>The set, the covered car, the screensaver running.</span></div></div>
+    <div><img class="fit" style="height:215px" src="assets/img/F4.jpg"><div class="cap"><span class="n">F4</span><span>Ahmed opens: "Assalamu alaikum, and a very warm welcome to everyone joining us online."</span></div></div>
+    <div><img class="fit" style="height:215px" src="assets/img/M1.png" data-n="M1" onerror="phImg(this)"><div class="cap"><span class="n">M1</span><span>Mohannad Al Dubayan, to camera: "It is an honour to introduce the new BMW X5 to our customers and fans across Saudi Arabia."</span></div></div>
+    <div><img class="fit" style="height:215px" src="assets/img/M2.png" data-n="M2" onerror="phImg(this)"><div class="cap"><span class="n">M2</span><span>"Mohannad, over to you." Ahmed hands over to Mohannad.</span></div></div>
+    <div><img class="fit" style="height:215px" src="assets/img/F6.jpg"><div class="cap"><span class="n">F6</span><span>Ahmed welcomes Adam Flint, Managing Director of BMW, MYNM.</span></div></div>
+    <div><img class="fit" style="height:215px" src="assets/img/F5.jpg"><div class="cap"><span class="n">F5</span><span>"To our audience members, feel free to drop your own questions in the chat box."</span></div></div>
   </div>
-  <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:28px;gap:40px">
-    <p style="font-size:20px"><span class="dot"></span><b>VO.</b> "In 1999, BMW introduced the original Sports Activity Vehicle (SAV). Today, the all-new fifth-generation BMW X5 arrives in the Kingdom." The cold open is lit only by the screen, and the supers play on the screen itself.</p>
-    <p style="font-size:20px"><span class="dot"></span><b>Screen.</b> The abstract screensaver runs at low brightness through Scene 1, then comes up to full as the set lights rise on "Adam, welcome".</p>
+  <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:26px;gap:40px">
+    <p style="font-size:20px"><span class="dot"></span><b>Welcome.</b> Mohannad speaks standing beside the covered car, the first live moment for MYNM. Supers: Ahmed Alshehri, then Mohannad Al Dubayan, Central Region Sales Manager, MYNM.</p>
+    <p style="font-size:20px"><span class="dot"></span><b>The chat.</b> Ahmed's invitation is in the script, so the chat team opens the Q&amp;A the moment he says it.</p>
   </div>
 </section>
 
-<!-- INTERVIEW -->
-<section class="slide roomy" data-sec="The film" data-t="Scene 3, the interview">
-  <div class="lab">Scene 3 <i>Interview</i></div>
-  <h2 style="font-size:60px">The interview. The car stays covered, and in frame.</h2>
-  <div class="grid" style="grid-template-columns:1.1fr 1fr;gap:60px;margin-top:40px">
+<!-- Q&A -->
+<section class="slide roomy" data-sec="The film" data-t="Scene 4, Q&amp;A">
+  <div class="lab">Scene 4 <i>Q&amp;A with Adam Flint</i></div>
+  <h2 style="font-size:60px">Four questions. The car stays covered, and in frame.</h2>
+  <div class="grid" style="grid-template-columns:1fr 1.1fr;gap:56px;margin-top:36px">
     <div>
       <img class="frame" src="assets/img/F7.jpg">
       <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px">
         <img class="frame" src="assets/img/F8.jpg"><img class="frame" src="assets/img/F9.jpg"><img class="frame" src="assets/img/F10.jpg">
       </div>
-      <p style="margin-top:20px;font-size:21px">The covered car always in frame between them. Two cameras on a slow drift. The abstract screensaver runs behind them until the reveal.</p>
+      <p style="margin-top:18px;font-size:20px">Two seats, the covered car between them, two cameras on a slow drift, the screensaver behind.</p>
     </div>
     <div>
       <table class="tight">
-        <tr><th style="width:250px">Question</th><th>Adam's answer beats</th></tr>
-        <tr><td><b>Q1</b> In 1999, the BMW X5 was something nobody had seen before. What was BMW trying to do?</td><td>The original BMW Sports Activity Vehicle (SAV). It has consistently set industry benchmarks since its launch in 1999.</td></tr>
-        <tr><td><b>Q2</b> Five generations later, it's a global bestseller. Why has it lasted?</td><td>Imposing presence and a flawless symbiosis of comfort and driving pleasure. Produced at the Home of X, BMW Group Plant Spartanburg, since 1999. The new BMW X5 will set the benchmark once again.</td></tr>
-        <tr><td><b>Q3</b> What makes the all-new fifth generation different?</td><td>An all-new design with a powerful, monolithic appearance, blending classic BMW SAV proportions with the Neue Klasse design language, and a redesigned interior with BMW Panoramic iDrive.</td></tr>
-        <tr><td><b>Exit line</b></td><td>"But honestly, Ahmad, I'd rather show you than tell you."</td></tr>
+        <tr><th style="width:300px">Ahmed asks</th><th>Adam's answer, in brief</th></tr>
+        <tr><td><b>Q1</b> What continues to make the X5 such an important vehicle for BMW today?</td><td>It created the Sports Activity Vehicle. SUV space and presence with BMW handling and precision. A technology-open philosophy, and the foundation of the X family.</td></tr>
+        <tr><td><b>Q2</b> Where has BMW made the greatest progress?</td><td>The Neue Klasse: an entirely new digital environment, new underlying technology, a redesigned interior, without losing the signature DNA.</td></tr>
+        <tr><td><b>Q3</b> What stands out in the Neue Klasse design language?</td><td>More capable, more refined, more intelligent. An interior designed for how it feels and functions, for every kind of journey.</td></tr>
+        <tr><td><b>Q4</b> As we pull back the curtain, what should local drivers look forward to?</td><td>"The X5 has always been a driver's car." Customers in Saudi Arabia will be impressed by how intelligent and capable it has become.</td></tr>
       </table>
     </div>
   </div>
 </section>
 
 <!-- REVEAL -->
-<section class="slide" data-sec="The film" data-t="Scene 4, the reveal">
-  <div class="lab">Scene 4 <i>The reveal</i></div>
-  <h2 style="font-size:60px">The reveal: the handover.</h2>
-  <p class="lead" style="font-size:22px;margin-top:12px;max-width:1600px">The light leaves the screen and lands on the car. The last generation on the screen slides off its edge, travels across the floor as a single line of light, and wakes the grille. Five generations handed over in one move.</p>
-  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:22px 24px;margin-top:30px">
-    <div><img class="fit" style="height:236px" src="assets/img/F11.jpg"><div class="cap"><span class="n">01</span><span>"Lights, please." The five generations play in sequence: E53, E70, F15, G05, then a silhouette of the new car.</span></div></div>
-    <div><img class="fit" style="height:236px" src="assets/img/F12.jpg"><div class="cap"><span class="n">02</span><span>The silhouette slides off the screen edge and a line of light runs across the floor to the car. Full blackout and a beat of silence. The cover comes off, out of sight.</span></div></div>
-    <div><img class="fit" style="height:236px" src="assets/img/F13.jpg"><div class="cap"><span class="n">03</span><span>The light arrives. The BMW Iconic Glow vertical kidney grille comes up first, then the new double-X daytime running lights.</span></div></div>
-    <div><img class="fit" style="height:236px" src="assets/img/F14.jpg"><div class="cap"><span class="n">04</span><span>A single light sweeps the length of the body. The music resolves and the full set lights come up.</span></div></div>
-    <div><img class="fit" style="height:236px" src="assets/img/F15.jpg"><div class="cap"><span class="n">05</span><span>Welcome moment: the 3D backlit ambient light strip lights up the wrap-around cockpit, as if the car is greeting the room. Adam and Ahmad step in.</span></div></div>
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <p style="font-size:17px"><b>The generations.</b> 1999, 2006, 2013, 2018, 2026. E53, E70, F15, G05, then the new car.</p>
-      <p style="font-size:17px"><b>Lines.</b> Adam: "Ladies and gentlemen, the new BMW X5. It's all yours, Ahmad." Ahmad: <span class="ar" style="color:#fff">BMW X5 الجديدة كلياً</span></p>
-      <div><button class="btn" data-modal="cueModal"><span class="dot" style="margin:0"></span>Open the reveal cue sheet</button></div>
-    </div>
+<section class="slide" data-sec="The film" data-t="Scene 5, the reveal">
+  <div class="lab">Scene 5 <i>Digital vehicle reveal</i></div>
+  <h2 style="font-size:58px">The reveal: from the screen to the car.</h2>
+  <p class="lead" style="font-size:21px;margin-top:10px;max-width:1650px">Ahmed: "And now, the moment we have all been waiting for. Ladies and gentlemen, I'm pleased to introduce BMW's latest model." The five generations play on the screen, a line of light carries the last one to the car, and the cover comes off in one slow, lit pull. The car wakes up light by light.</p>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:18px 20px;margin-top:24px">
+    <div><img class="fit" style="height:190px" src="assets/img/F11.jpg"><div class="cap"><span class="n">F11</span><span>The five generations play in sequence on the screen.</span></div></div>
+    <div><img class="fit" style="height:190px" src="assets/img/F12.jpg"><div class="cap"><span class="n">F12</span><span>A line of light runs across the floor to the covered car.</span></div></div>
+    <div><img class="fit" style="height:190px" src="assets/img/R1.png" data-n="R1" onerror="phImg(this)"><div class="cap"><span class="n">R1</span><span>Close up: the cover slides off the bodywork in one slow pull, grazed by a single hard light.</span></div></div>
+    <div><img class="fit" style="height:190px" src="assets/img/R2.png" data-n="R2" onerror="phImg(this)"><div class="cap"><span class="n">R2</span><span>Straight on: the BMW Iconic Glow kidney grille ignites, then the double-X daytime running lights.</span></div></div>
+    <div><img class="fit" style="height:190px" src="assets/img/R3.png" data-n="R3" onerror="phImg(this)"><div class="cap"><span class="n">R3</span><span>Macro: a double-X light switching on, the last of the cover falling away behind it.</span></div></div>
+    <div><img class="fit" style="height:190px" src="assets/img/F13.jpg"><div class="cap"><span class="n">F13</span><span>Front three quarter, the car's lights the only light in the room.</span></div></div>
+    <div><img class="fit" style="height:190px" src="assets/img/F14.jpg"><div class="cap"><span class="n">F14</span><span>A single light sweeps the length of the body. The music resolves.</span></div></div>
+    <div><img class="fit" style="height:190px" src="assets/img/F15.jpg"><div class="cap"><span class="n">F15</span><span>Full set lights up on the revealed car, the Riyadh skyline on the screen behind it.</span></div></div>
   </div>
+  <div style="margin-top:22px;display:flex;align-items:center;gap:30px"><button class="btn" data-modal="cueModal"><span class="dot" style="margin:0"></span>Open the reveal cue sheet</button><p style="font-size:17px">The generations: 1999, 2006, 2013, 2018, 2026. E53, E70, F15, G05, then the new car.</p></div>
   <div class="modal" id="cueModal"><div class="box">
     <button class="x" aria-label="Close">×</button>
-    <div class="lab">Scene 4 <i>Reveal cue sheet</i></div>
+    <div class="lab">Scene 5 <i>Reveal cue sheet</i></div>
     <h2 style="font-size:50px">One timecode runs everything.</h2>
-    <p style="margin-top:12px;font-size:21px">Screen, lighting, floor light line and score all chase the same timecode. Cue 0 is Adam's "Lights, please." Timings are indicative and locked in rehearsal.</p>
+    <p style="margin-top:12px;font-size:21px">Screen, lighting, the line of light and the score all chase the same timecode. Cue 0 is the end of Ahmed's line, "BMW's latest model." Timings are indicative and locked in rehearsal.</p>
     <table style="margin-top:28px">
       <tr><th style="width:80px">Cue</th><th style="width:100px">TC</th><th>Screen</th><th>Light</th><th>Sound</th><th>Camera</th></tr>
-      <tr><td><b>0</b></td><td>+0:00</td><td>Screensaver pulls to black</td><td>Set to 30%, key on hosts only</td><td>Low pulse in</td><td>Wide, locked</td></tr>
-      <tr><td><b>1</b></td><td>+0:01</td><td>Generations 1 to 4 draw, 1.4s each</td><td>Set to 10%</td><td>Score builds</td><td>Slow push on screen</td></tr>
-      <tr><td><b>2</b></td><td>+0:07</td><td>Fifth outline, held 3s</td><td>Hold</td><td>Build peaks</td><td>Push continues</td></tr>
-      <tr><td><b>3</b></td><td>+0:10</td><td>Outline slides off the right edge</td><td>Floor light line: single pulse, screen to car, 1.5s</td><td>Hit, then cut</td><td>Low floor angle</td></tr>
-      <tr><td><b>4</b></td><td>+0:12</td><td>Black</td><td>Total blackout. Cover pulled</td><td>2s silence</td><td>Hold</td></tr>
-      <tr><td><b>5</b></td><td>+0:14</td><td>Black</td><td>BMW Iconic Glow grille up, then double-X daytime running lights</td><td>Single low note</td><td>Low front three quarter</td></tr>
-      <tr><td><b>6</b></td><td>+0:20</td><td>Black</td><td>Body sweep, front to rear, 4s</td><td>Score resolves</td><td>Side profile</td></tr>
-      <tr><td><b>7</b></td><td>+0:26</td><td>Harrat plate fades up</td><td>Full set to 100% over 3s</td><td>Full theme</td><td>Wide hero</td></tr>
-      <tr><td><b>8</b></td><td>+0:30</td><td>Harrat holds</td><td>Ambient light strip lights up the cockpit</td><td>Theme under</td><td>Wide, hosts step in</td></tr>
+      <tr><td><b>0</b></td><td>+0:00</td><td>Screensaver pulls to black</td><td>Set to 30%, key on Ahmed only</td><td>Low pulse in</td><td>Wide, locked</td></tr>
+      <tr><td><b>1</b></td><td>+0:01</td><td>Generations 1 to 4, 1.4s each</td><td>Set to 10%</td><td>Score builds</td><td>Slow push on screen</td></tr>
+      <tr><td><b>2</b></td><td>+0:07</td><td>Silhouette of the new car, held</td><td>Hold</td><td>Build peaks</td><td>Push continues</td></tr>
+      <tr><td><b>3</b></td><td>+0:10</td><td>Silhouette slides off the edge</td><td>Line of light, screen to car, 1.5s</td><td>Hit</td><td>Low floor angle</td></tr>
+      <tr><td><b>4</b></td><td>+0:12</td><td>Black</td><td>One hard side light. The cover is pulled in a single slow move</td><td>Breath of silence, then a low note</td><td>Cover close up, slider</td></tr>
+      <tr><td><b>5</b></td><td>+0:18</td><td>Black</td><td>BMW Iconic Glow grille, then double-X daytime running lights</td><td>Pulse returns</td><td>Straight on, then macro</td></tr>
+      <tr><td><b>6</b></td><td>+0:26</td><td>Black</td><td>Body sweep, front to rear, 4s</td><td>Score resolves</td><td>Side profile</td></tr>
+      <tr><td><b>7</b></td><td>+0:32</td><td>City plate fades up</td><td>Overhead scrim and full set to 100% over 3s</td><td>Full theme</td><td>Wide hero, jib</td></tr>
     </table>
   </div></div>
 </section>
 
-<!-- WALKTHROUGH -->
-<section class="slide" data-sec="The film" data-t="Scene 5, walkthrough">
-  <div class="lab">Scene 5 <i>Walkthrough</i></div>
-  <h2 style="font-size:60px">Four stops. Every feature working on camera.</h2>
-  <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px">
-    <div><img class="fit" style="height:270px" src="assets/img/F16.jpg"><h3 style="margin-top:18px;font-size:24px">01 Front</h3><p style="font-size:19px">The upright front end with the BMW Iconic Glow vertical kidney grille, and the new switchable double-X daytime running lights.</p></div>
-    <div><img class="fit" style="height:270px" src="assets/img/F17.jpg"><h3 style="margin-top:18px;font-size:24px">02 Side</h3><p style="font-size:19px">The BMW Winglet operating the new electrically powered doors, and the automatic soft-close doors if fitted. Classic BMW SAV proportions, Neue Klasse design language, alloy wheels up to 23 inches.</p></div>
-    <div><img class="fit" style="height:270px" src="assets/img/F18.jpg"><h3 style="margin-top:18px;font-size:24px">03 Driver's seat</h3><p style="font-size:19px">BMW Panoramic iDrive: the free-cut Central Display, BMW Panoramic Vision, the BMW 3D Head-Up Display and the multifunction steering wheel. The set dims for the ambient light strip.</p></div>
-    <div><img class="fit" style="height:270px" src="assets/img/F19.jpg"><h3 style="margin-top:18px;font-size:24px">04 Passenger side</h3><p style="font-size:19px">The BMW Passenger Screen, making its debut on the BMW X5, available optionally. Slate, used as a decorative surface by a carmaker for the first time, with glass and X stitching.</p></div>
-  </div>
-  <p style="margin-top:30px;font-size:19px"><b>Behind them:</b> the harrat plate. The brief's local twist lives here, after the reveal, so the car arrives in a landscape that is unmistakably Saudi: volcanic rock, warm light, blue green tones.</p>
-</section>
-
-<!-- CLOSE -->
-<section class="slide" data-sec="The film" data-t="Scene 6, close and CTA">
-  <div class="lab">Scene 6 <i>Close and CTA</i></div>
-  <h2 style="font-size:60px">Coming soon. See it first.</h2>
-  <div class="grid" style="grid-template-columns:1.2fr 1fr;gap:70px;margin-top:44px">
-    <div><img class="fit" src="assets/img/F20.jpg" style="height:420px"><div class="cap"><span class="n">F20</span><span>Wide shot, Ahmad beside the car, speaking to camera.</span></div></div>
+<!-- DRIVE + CLOSE -->
+<section class="slide" data-sec="The film" data-t="Scenes 6 and 7, drive and close">
+  <div class="lab">Scenes 6 and 7 <i>Driving experience and closing</i></div>
+  <h2 style="font-size:58px">Out on the road. Then back to the room.</h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:28px;margin-top:36px">
     <div>
-      <div class="quote"><div class="ar">BMW X5 الجديدة قريباً في المملكة. وقبل الكل، تقدر تشوفها بنفسك في عرض خاص بمنطقتك. سجّل الحين واحجز موعدك.</div><div class="en">The new BMW X5 is coming soon to the Kingdom. And before anyone else, you can see it for yourself at a private viewing in your region. Register now and book your slot.</div></div>
-      <img class="fit" src="assets/img/F21.jpg" style="aspect-ratio:16/9;height:auto;margin-top:26px">
-      <div class="cap"><span class="n">F21</span><span>End card: THE NEW BMW X5. Coming soon. Book your private viewing: Central, Western, Eastern, with the booking link.</span></div>
+      <div class="ph" style="height:300px"><div class="play"></div><span>Driving experience footage</span></div>
+      <div class="cap"><span class="n">06</span><span>Supplied driving footage of the new BMW X5, cut to the reveal score, full frame in the edit.</span></div>
     </div>
+    <div><img class="fit" src="assets/img/F20.jpg" style="height:300px"><div class="cap"><span class="n">F20</span><span>Ahmed beside the car: "The all-new BMW X5. A vehicle that continues to redefine performance, luxury, and versatility."</span></div></div>
+    <div><img class="fit" src="assets/img/F21.jpg" style="height:300px"><div class="cap"><span class="n">F21</span><span>End card: THE NEW BMW X5. Coming soon. Book your private viewing: Central, Western, Eastern.</span></div></div>
   </div>
+  <div class="quote" style="margin-top:34px;max-width:1500px"><div class="en" style="font-size:22px;color:#fff">"I would like to thank Mohannad Al Dubayan and Adam Flint for sharing their insights today. And to all of our viewers across the Kingdom, thank you for joining us on this incredible journey."</div></div>
 </section>
 
 <!-- SECTION SCREEN -->
@@ -309,13 +298,13 @@ canvas{display:block}
   <div class="lab">04.1 <i>Screen system</i></div>
   <h2 style="font-size:58px">Three states, one story.</h2>
   <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px">
-    <div><img class="frame" src="assets/img/S1.jpg" style="height:300px;object-fit:cover"><h3 style="margin-top:22px;font-size:28px">Screensaver</h3><p>Scenes 1 to 3. One slow abstract loop in the reveal language. Low in the cold open, full from the intro.</p></div>
-    <div><img class="frame" src="assets/img/F11.jpg" style="height:300px;object-fit:cover"><h3 style="margin-top:22px;font-size:28px">Five generations</h3><p>Scene 4. E53, E70, F15, G05, then the new car in silhouette. The last one leaves the screen, then black.</p></div>
-    <div><img class="frame" src="assets/img/HARRAT.jpg" style="height:300px;object-fit:cover"><h3 style="margin-top:22px;font-size:28px">Home</h3><p>Scenes 5 and 6. The harrat backplate: Saudi volcanic fields at dusk, barely moving.</p></div>
+    <div><img class="frame" src="assets/img/S1.jpg" style="height:300px;object-fit:cover"><h3 style="margin-top:22px;font-size:28px">Screensaver</h3><p>Scenes 1 to 4. One slow abstract loop in the reveal language, from the opening through the Q&amp;A.</p></div>
+    <div><img class="frame" src="assets/img/F11.jpg" style="height:300px;object-fit:cover"><h3 style="margin-top:22px;font-size:28px">Five generations</h3><p>Scene 5. E53, E70, F15, G05, then the new car in silhouette. The last one leaves the screen, then black.</p></div>
+    <div><img class="fit" style="height:300px" src="assets/img/CITY.png" data-n="CITY" onerror="phImg(this)"><h3 style="margin-top:22px;font-size:28px">Home</h3><p>After the reveal and through the closing. The Riyadh skyline at blue hour, the city lights barely moving.</p></div>
   </div>
   <div class="grid" style="grid-template-columns:1fr 1fr;gap:60px;margin-top:56px">
     <p style="font-size:22px"><b>Logo rule.</b> No BMW logo on the screen in any state. The 3D logo lives on the static wall only, one per sightline, as the brief requires.</p>
-    <p style="font-size:22px"><b>Spec.</b> One screensaver loop, the generations sequence and the harrat plate, all timecoded. The media day backplate is a still from the global DAM.</p>
+    <p style="font-size:22px"><b>Spec.</b> One screensaver loop, the generations sequence and the city plate, all timecoded. The media day backplate is a still from the global DAM.</p>
   </div>
 </section>
 
@@ -333,9 +322,9 @@ canvas{display:block}
       <h2 style="font-size:52px">One loop, in the reveal language.</h2>
       <p style="margin-top:20px;font-size:21px">A single slow, abstract loop carries everything before the reveal. It is built from the reveal storyboard frames and animated into a seamless 90 second loop, so the room always has movement without competing with the conversation.</p>
       <table style="margin-top:26px">
-        <tr><td><b>Cold open</b></td><td>About 20% brightness, slowed</td></tr>
-        <tr><td><b>Intro and interview</b></td><td>Full brightness, slow</td></tr>
-        <tr><td><b>"Lights, please"</b></td><td>Pulls to black, the generations begin</td></tr>
+        <tr><td><b>Opening and welcome</b></td><td>Full brightness, slow</td></tr>
+        <tr><td><b>Q&amp;A</b></td><td>Slightly dimmed, so the hosts lead</td></tr>
+        <tr><td><b>"BMW's latest model"</b></td><td>Pulls to black, the generations begin</td></tr>
       </table>
     </div>
   </div>
@@ -440,11 +429,11 @@ canvas{display:block}
 </section>
 
 <!-- OPTIONAL Q&A -->
-<section class="slide" data-sec="Going live" data-t="Optional: live Q&amp;A">
-  <div class="lab">05.3 <i>Live Q&amp;A</i> <span class="tag w">Optional</span></div>
+<section class="slide" data-sec="Going live" data-t="Live Q&amp;A">
+  <div class="lab">05.3 <i>Live Q&amp;A</i></div>
   <h2 style="font-size:56px">Answers written before anyone asks.</h2>
   <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:24px;margin-top:22px">
-    <p style="font-size:19px"><b>In the film.</b> One short line from Ahmad before the close invites questions into the chat, recorded as a pickup so it can be dropped.</p>
+    <p style="font-size:19px"><b>In the film.</b> Ahmed invites questions into the chat as he introduces Adam, as written in the script.</p>
     <p style="font-size:19px"><b>In the chat.</b> The brand account answers on all three platforms, Arabic first, from an approved answer bank.</p>
     <p style="font-size:19px"><b>Before the day.</b> An IG "Ask" sticker four to six days out so the bank starts from real questions: <span class="ar" style="color:#fff;display:block;text-align:left;margin-top:4px">اسألوا عن X5 الجديدة</span></p>
   </div>
@@ -542,7 +531,7 @@ canvas{display:block}
     <tr><td><b>Cutdowns</b>, 60s, 30s, 15s</td><td>9:16 and 16:9</td></tr>
     <tr><td><b>Car reels</b>, exterior and interior</td><td>9:16</td></tr>
     <tr><td><b>Photography</b>, 15 to 20 finals</td><td>Retouched stills</td></tr>
-    <tr><td><b>Screen content</b>: screensaver loop, generations, harrat plate</td><td>Timecoded, to the screen's resolution</td></tr>
+    <tr><td><b>Screen content</b>: screensaver loop, generations, city plate</td><td>Timecoded, to the screen's resolution</td></tr>
     <tr><td><b>Live kit</b>: answer bank and story assets, if the Q&amp;A runs</td><td>Shared doc and stories</td></tr>
   </table>
 </section>
@@ -551,16 +540,17 @@ canvas{display:block}
 <section class="slide" data-sec="Production" data-t="Production requirements">
   <div class="lab">06.4 <i>Production requirements</i></div>
   <h2 style="font-size:56px">Which shot, where in the script.</h2>
-  <p style="margin-top:12px;font-size:21px;max-width:1300px">The full guide for the production house: how each scene is covered, the equipment for the day, and how the shoot is watched live from Dubai.</p>
+  <p style="margin-top:12px;font-size:21px;max-width:1300px">The full guide for the production house: how each scene is covered, the camera and lighting kit, and how the shoot is watched live from Dubai.</p>
   <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:24px;margin-top:44px">
     <div class="card"><div class="num">Shoot</div><p style="margin-top:12px;font-size:24px;color:#fff">Mon 2 Nov 2026</p></div>
     <div class="card"><div class="num">Location</div><p style="margin-top:12px;font-size:24px;color:#fff">Sulaymaniyah showroom, Riyadh</p></div>
     <div class="card"><div class="num">Live</div><p style="margin-top:12px;font-size:24px;color:#fff">Sun 8 Nov, 8:30pm KSA</p></div>
     <div class="card"><div class="num">Viewing</div><p style="margin-top:12px;font-size:24px;color:#fff">Remote, from Dubai</p></div>
   </div>
-  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:40px;margin-top:44px">
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:36px;margin-top:44px">
     <div><div class="rule" style="width:60px;margin-bottom:20px"></div><h3>Keep the camera moving</h3><p style="font-size:20px">Jib and slider for every shot of the car. Locked shots only for dialogue and the reveal wide.</p></div>
     <div><div class="rule" style="width:60px;margin-bottom:20px"></div><h3>Shot map and kit</h3><p style="font-size:20px">Wides, mids, close-ups and sweeps for every scene, with must have and good to have equipment.</p></div>
+    <div><div class="rule" style="width:60px;margin-bottom:20px"></div><h3>Lighting</h3><p style="font-size:20px">An overhead scrim over the car and a soft cross-key for the talk, rigged and struck while the showroom is closed.</p></div>
     <div><div class="rule" style="width:60px;margin-bottom:20px"></div><h3>Remote viewing</h3><p style="font-size:20px">Every camera live to a private link, call time to wrap, with talkback to the director.</p></div>
   </div>
   <div style="margin-top:50px;display:flex;gap:16px"><button class="btn" data-doc="prodreq"><span class="dot" style="margin:0"></span>Open the production requirements</button><button class="btn" data-doc-tab="prodreq" style="border-color:rgba(255,255,255,.3);box-shadow:none">Open in a new tab</button></div>
@@ -568,11 +558,11 @@ canvas{display:block}
 </section>
 
 <!-- END -->
-<section class="slide" data-sec="End" data-t="It's all yours">
+<section class="slide" data-sec="End" data-t="The all-new BMW X5">
   <canvas id="endCanvas" width="1920" height="1080" style="position:absolute;inset:0;opacity:.8"></canvas>
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 30%,rgba(0,0,0,.8) 80%)"></div>
   <div style="position:absolute;left:0;right:0;bottom:170px;text-align:center;z-index:2">
-    <h2 style="font-size:84px;font-weight:100;max-width:none">It's all yours.</h2>
+    <h2 style="font-size:84px;font-weight:100;max-width:none">The all-new BMW X5.</h2>
     <p class="ar" style="font-size:30px;color:#fff;margin-top:16px">BMW X5 الجديدة كلياً</p>
   </div>
 </section>
