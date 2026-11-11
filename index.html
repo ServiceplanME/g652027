@@ -113,6 +113,20 @@ canvas{display:block}
 .modal.full .x{z-index:3;background:#000}
 .list2 td{padding:9px 14px 9px 0;font-size:18px}
 .list2 td:first-child{width:46px;color:var(--cyan);font-weight:700;font-size:15px}
+.cp3{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:26px;margin-top:34px}
+.cp3 .post{padding:11px 15px;margin-bottom:9px}.cp3 .post .t{font-size:19px;margin-top:3px}.cp3 .post .f{font-size:14px;margin-top:3px}.cp3 .post .d{font-size:12.5px;display:flex;justify-content:space-between;gap:10px}.cp3 .post .d i{font-style:normal;color:rgba(255,255,255,.42);font-weight:400;letter-spacing:.02em}
+.vbox{position:relative;background:#000;border:1px solid var(--line);border-radius:2px;overflow:hidden}.vbox video{width:100%;height:100%;object-fit:cover;display:block}
+.vbox .live{position:absolute;left:14px;top:12px;font-size:12px;font-weight:700;letter-spacing:.08em;color:#fff;background:rgba(0,0,0,.55);padding:5px 10px;border-radius:30px}
+.kvg{display:flex;gap:14px;align-items:flex-end}.kvg img{display:block;border:1px solid var(--line);border-radius:2px}
+.gl td{font-size:18px;padding:11px 18px 11px 0}
+.cp3 .ph3{border-top:3px solid rgba(255,255,255,.6);padding-top:16px}
+.cp3 .ph3.live{border-top-color:var(--cyan);box-shadow:0 -8px 18px -10px var(--cyan)}
+.cp3 .ph3>h3{font-size:26px;margin-bottom:16px}
+.post{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:16px 18px;margin-bottom:12px}
+.post .d{font-size:14px;font-weight:700;letter-spacing:.06em;color:var(--cyan)}
+.post .t{font-size:21px;color:#fff;margin-top:6px}
+.post .f{font-size:16px;color:var(--mute);margin-top:4px;line-height:1.4}
+.post.add{border-style:dashed;border-color:rgba(124,196,255,.5)}
 </style>
 <script>function phImg(el){if(!el.dataset.t){el.dataset.t=1;el.src=el.src.replace(/\.png$/,'.jpg');return;}var d=document.createElement('div');d.className='ph';d.style.height=el.style.height;d.innerHTML='<b style="color:#fff;font-weight:400">'+el.dataset.n+'</b><span>Frame in progress</span>';el.replaceWith(d);}</script>
 </head>
@@ -121,12 +135,12 @@ canvas{display:block}
 
 <!-- COVER -->
 <section class="slide" data-sec="Cover" data-t="Cover">
-  <canvas id="coverCanvas" width="1920" height="1080" style="position:absolute;inset:0;opacity:.9"></canvas>
+  <video class="bgv" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translateY(-120px);opacity:.95;-webkit-mask-image:linear-gradient(180deg,#000 40%,transparent 82%);mask-image:linear-gradient(180deg,#000 40%,transparent 82%)" muted loop playsinline autoplay preload="metadata" poster="assets/img/AKV.jpg" src="assets/video/animated_kv.mp4"></video>
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.85) 85%)"></div>
   <div style="position:absolute;left:120px;bottom:130px;z-index:2">
-    <div class="lab">BMW X5 KSA launch <i>Creative proposal</i></div>
+    <div class="lab">The all-new BMW X5 KSA launch <i>Creative proposal</i></div>
     <h1>The X5 live<br>presentation.</h1>
-    <p style="margin-top:28px;font-size:26px">A pre-recorded premiere that plays like a live event. Premieres no later than Sunday 15 November 2026.</p>
+    <p style="margin-top:28px;font-size:26px">A pre-recorded premiere that plays like a live event. Live on Saturday 21 November 2026, in the evening.</p>
   </div>
   <div style="position:absolute;right:120px;bottom:136px;z-index:2;text-align:right">
     <img src="assets/img/bmw-logo.svg" style="width:96px;height:96px;opacity:.95" alt="BMW">
@@ -140,8 +154,8 @@ canvas{display:block}
   <h2>The events are cancelled. The launch still needs a room, a moment and an audience.</h2>
   <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:56px">
     <div class="card"><div class="num">What changed</div><p style="margin-top:14px">Customer and media events are off for safety reasons. The launch moves to social, in a premium keynote format.</p></div>
-    <div class="card"><div class="num">The format</div><p style="margin-top:14px">A scheduled premiere on IG, YouTube and X with a countdown and a live chat, then boosted through media.</p></div>
-    <div class="card"><div class="num">Where and when</div><p style="margin-top:14px">Sulaymaniyah showroom, Riyadh. Shoot on Sunday 8 November, premiere no later than Sunday 15 November 2026.</p></div>
+    <div class="card"><div class="num">The format</div><p style="margin-top:14px">A scheduled premiere on YouTube, Instagram and Facebook with a countdown and a live chat, then boosted through media.</p></div>
+    <div class="card"><div class="num">Where and when</div><p style="margin-top:14px">Sulaymaniyah showroom, Riyadh. Shot ahead of the day, live on Saturday 21 November 2026, in the evening.</p></div>
   </div>
   <div style="position:absolute;left:120px;right:120px;bottom:100px"><img src="assets/img/MOCK.jpg" class="fit" style="height:360px;object-position:center 55%"><div class="cap"><span class="n">Set</span><span>Set mockup: one highlight screen, an interview area to the left, the car to the right.</span></div></div>
 </section>
@@ -153,7 +167,7 @@ canvas{display:block}
   <p class="lead">Leading with confidence means the car does the talking. The show has to feel live, keep people watching until the reveal, and leave a library of content behind it. Three principles hold it together.</p>
   <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:70px">
     <div><div class="rule" style="width:80px;margin-bottom:28px"></div><h3>It plays live</h3><p>A countdown before every stream, a host who talks to the audience, and a chat that is looked after in real time. Pre-recorded, never feels it.</p></div>
-    <div><div class="rule" style="width:80px;margin-bottom:28px"></div><h3>The screen is the second host</h3><p>The highlight screen behind them has its own story: abstract before the reveal, a landscape that feels like home after it.</p></div>
+    <div><div class="rule" style="width:80px;margin-bottom:28px"></div><h3>The screen is the second host</h3><p>The highlight screen behind them has its own story: abstract before the reveal, the Kingdom Centre after it.</p></div>
     <div><div class="rule" style="width:80px;margin-bottom:28px"></div><h3>Built to be cut</h3><p>Every segment is shot to stand alone, and the same day delivers two car reels and a full set of stills.</p></div>
   </div>
 </section>
@@ -296,10 +310,11 @@ canvas{display:block}
   <div class="grid" style="grid-template-columns:1.25fr 1fr;gap:60px;margin-top:36px">
     <div><img class="fit" style="height:470px" src="assets/img/QA1.png" data-n="QA1" onerror="phImg(this)"><div class="cap"><span class="n">QA1</span><span>Ahmed and Adam back in their seats, the revealed car behind them. Ahmed reads a question from the chat on a tablet, Adam answers.</span></div></div>
     <div>
-      <p style="font-size:21px">After the walkthrough, Ahmed returns to the chat he opened in Scene 3. Three questions, chosen by the client in advance, are answered by Adam on camera, recorded on the shoot day like the rest of the film.</p>
+      <p style="font-size:21px">After the walkthrough, Ahmed returns to the chat he opened in Scene 3. Three questions, chosen by the client from what the audience sent to "Ask Adam", are answered by Adam on camera.</p>
       <table style="margin-top:22px">
-        <tr><td><b>Before the shoot</b></td><td>The client picks three questions from the question bank</td></tr>
-        <tr><td><b>On camera</b></td><td>Ahmed reads each one, Adam answers. Pre-recorded</td></tr>
+        <tr><td><b>Tue 17 November</b></td><td>"Ask Adam" question box on Instagram stories</td></tr>
+        <tr><td><b>Client picks</b></td><td>Three questions from the box, with the question bank as backup</td></tr>
+        <tr><td><b>On camera</b></td><td>Ahmed reads each one, Adam answers. Pre-recorded, as a short pickup on the set if the box closes after the main shoot</td></tr>
         <tr><td><b>During the stream</b></td><td>The three questions are seeded in the chat just before they come up on screen</td></tr>
         <tr><td><b>In the chat</b></td><td>The brand account answers other questions on all three platforms, Arabic first, from the bank</td></tr>
       </table>
@@ -311,7 +326,7 @@ canvas{display:block}
     <button class="x" aria-label="Close">×</button>
     <div class="lab">Scene 8 <i>Question bank</i></div>
     <h2 style="font-size:46px">Answers written before anyone asks.</h2>
-    <p style="margin-top:10px;font-size:19px">The client picks three for Adam to answer on camera. The rest guide the chat team. Items in brackets come from BMW before the day.</p>
+    <p style="margin-top:10px;font-size:19px">The "Ask Adam" box and these answers feed the three questions Adam answers on camera. The rest guide the chat team. Items in brackets come from BMW before the day.</p>
     <table style="margin-top:24px" class="tight">
     <tr><th style="width:430px">Likely question</th><th>Answer</th><th style="width:180px">Status</th></tr>
     <tr><td><b>When can I see it in person?</b></td><td>Private viewings are coming to the Central, Western and Eastern regions. Register at the link in our bio to book your slot.</td><td>From script</td></tr>
@@ -344,9 +359,9 @@ canvas{display:block}
 
 <!-- SECTION SCREEN -->
 <section class="slide section" data-sec="The screen" data-t="The screen">
-  <canvas id="secScreen" width="1920" height="1080" style="position:absolute;inset:0;opacity:.6"></canvas>
+  <video class="bgv" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75" muted loop playsinline autoplay preload="metadata" poster="assets/img/EL2.jpg" src="assets/video/event_loop.mp4"></video>
   <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.7) 55%,rgba(0,0,0,0) 85%)"></div>
-  <div class="lab">04</div><div class="big">The screen.</div><p class="lead" style="max-width:1050px">One highlight screen. Abstract until the reveal, home after it.</p>
+  <div class="lab">04</div><div class="big">The screen.</div><p class="lead" style="max-width:1050px">One highlight screen. Abstract until the reveal, the Kingdom Centre after it.</p>
 </section>
 
 <!-- SCREEN SYSTEM -->
@@ -354,38 +369,58 @@ canvas{display:block}
   <div class="lab">04.1 <i>Screen system</i></div>
   <h2 style="font-size:58px">Three states, one story.</h2>
   <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:30px;margin-top:50px">
-    <div><img class="frame" src="assets/img/S1.jpg" style="height:300px;object-fit:cover"><h3 style="margin-top:22px;font-size:28px">Screensaver</h3><p>Scenes 1 to 4. One slow abstract loop in the reveal language, from the opening through the interview.</p></div>
+    <div><div class="vbox" style="height:300px"><video class="bgv" style="" muted loop playsinline autoplay preload="metadata" poster="assets/img/EL1.jpg" src="assets/video/event_loop.mp4"></video></div><h3 style="margin-top:22px;font-size:28px">Event loop</h3><p>Scenes 1 to 4. The grille, the double-X lights and frosted glass drifting through the dark, from the opening through the interview.</p></div>
     <div><img class="frame" src="assets/img/F11.jpg" style="height:300px;object-fit:cover"><h3 style="margin-top:22px;font-size:28px">Five generations</h3><p>Scene 5. E53, E70, F15, G05, then the new car in silhouette. The last one leaves the screen, then black.</p></div>
-    <div><img class="fit" style="height:300px" src="assets/img/CITY.png" data-n="CITY" onerror="phImg(this)"><h3 style="margin-top:22px;font-size:28px">Home</h3><p>After the reveal, through the walkthrough and the closing. The Riyadh skyline at blue hour, the city lights barely moving.</p></div>
+    <div><div class="vbox" style="height:300px"><video class="bgv" style="" muted loop playsinline autoplay preload="metadata" poster="assets/img/KC3.jpg" src="assets/video/city_loop.mp4"></video></div><h3 style="margin-top:22px;font-size:28px">Kingdom Centre</h3><p>After the reveal, through the walkthrough, the Q&amp;A and the closing. Riyadh's skyline, built in the same glass and light.</p></div>
   </div>
   <div class="grid" style="grid-template-columns:1fr 1fr;gap:60px;margin-top:56px">
     <p style="font-size:22px"><b>Logo rule.</b> No BMW logo on the screen in any state. The 3D logo lives on the static wall only, one per sightline, as the brief requires.</p>
-    <p style="font-size:22px"><b>Spec.</b> One screensaver loop, the generations sequence and the city plate, all timecoded. The media day backplate is a still from the global DAM.</p>
+    <p style="font-size:22px"><b>Spec.</b> The event loop (3 min 48), the generations sequence and the Kingdom Centre loop (1 min 39), all seamless 1920 x 1080 masters, timecoded to the script.</p>
   </div>
 </section>
 
 <!-- SCREENSAVER -->
-<section class="slide" data-sec="The screen" data-t="The screensaver">
-  <div class="lab">04.2 <i>The screensaver</i></div>
+<section class="slide" data-sec="The screen" data-t="The event loop">
+  <div class="lab">04.2 <i>The event loop</i></div>
   <div style="display:flex;gap:60px;margin-top:6px">
     <div style="flex:none;width:1120px">
-      <div class="ss" style="height:630px">
-        <img src="assets/img/S1.jpg"><img src="assets/img/S2.jpg"><img src="assets/img/S3.jpg"><img src="assets/img/S4.jpg"><img src="assets/img/S5.jpg"><img src="assets/img/S6.jpg"><img src="assets/img/S7.jpg">
-      </div>
-      <p style="font-size:15px;color:var(--dim);margin-top:12px">Preview: the reveal storyboard frames in sequence. The final loop is animated from these frames.</p>
+      <div class="vbox" style="height:630px"><video class="bgv" style="" muted loop playsinline autoplay preload="metadata" poster="assets/img/EL1.jpg" src="assets/video/event_loop.mp4"></video><span class="live">PLAYING</span></div>
+      <p style="font-size:15px;color:var(--dim);margin-top:12px">X5_Event_Loop_v8, the final loop as it plays on the screen.</p>
     </div>
     <div style="flex:1">
       <h2 style="font-size:52px">One loop, in the reveal language.</h2>
-      <p style="margin-top:20px;font-size:21px">A single slow, abstract loop carries everything before the reveal. It is built from the reveal storyboard frames and animated into a seamless 90 second loop, so the room always has movement without competing with the conversation.</p>
+      <p style="margin-top:20px;font-size:21px">Everything before the reveal runs on one seamless loop of 3 minutes 48. The light signature is hinted, never shown whole on the car, so the room always has movement without giving the reveal away or competing with the conversation.</p>
       <table style="margin-top:26px">
-        <tr><td><b>Opening and welcome</b></td><td>Full brightness, slow</td></tr>
+        <tr><td><b>Opening and welcome</b></td><td>Full brightness</td></tr>
         <tr><td><b>Interview</b></td><td>Slightly dimmed, so the hosts lead</td></tr>
         <tr><td><b>"BMW's latest model"</b></td><td>Pulls to black, the generations begin</td></tr>
       </table>
     </div>
   </div>
-  <div class="grid" style="grid-template-columns:repeat(7,1fr);gap:12px;margin-top:26px">
-    <img class="fit" style="height:62px" src="assets/img/S1.jpg"><img class="fit" style="height:62px" src="assets/img/S2.jpg"><img class="fit" style="height:62px" src="assets/img/S3.jpg"><img class="fit" style="height:62px" src="assets/img/S4.jpg"><img class="fit" style="height:62px" src="assets/img/S5.jpg"><img class="fit" style="height:62px" src="assets/img/S6.jpg"><img class="fit" style="height:62px" src="assets/img/S7.jpg"></div>
+  <div class="grid" style="grid-template-columns:repeat(6,1fr);gap:12px;margin-top:26px">
+    <img class="fit" style="height:96px" src="assets/img/EL1.jpg"><img class="fit" style="height:96px" src="assets/img/EL2.jpg"><img class="fit" style="height:96px" src="assets/img/EL3.jpg"><img class="fit" style="height:96px" src="assets/img/EL4.jpg"><img class="fit" style="height:96px" src="assets/img/EL5.jpg"><img class="fit" style="height:96px" src="assets/img/EL6.jpg"></div>
+</section>
+
+<!-- KINGDOM CENTRE -->
+<section class="slide" data-sec="The screen" data-t="The Kingdom Centre">
+  <div class="lab">04.3 <i>The Kingdom Centre</i></div>
+  <div style="display:flex;gap:60px;margin-top:6px">
+    <div style="flex:none;width:1120px">
+      <div class="vbox" style="height:630px"><video class="bgv" style="" muted loop playsinline autoplay preload="metadata" poster="assets/img/KC1.jpg" src="assets/video/city_loop.mp4"></video><span class="live">PLAYING</span></div>
+      <p style="font-size:15px;color:var(--dim);margin-top:12px">KC_CityPlate_Loop_v2, the final loop as it plays on the screen.</p>
+    </div>
+    <div style="flex:1">
+      <h2 style="font-size:52px">Home, in the same light.</h2>
+      <p style="margin-top:20px;font-size:21px">Once the car is revealed, the screen comes home to Riyadh. The Kingdom Centre and the skyline, cut from the same frosted glass and light as the event loop, so the room changes meaning without changing style. One seamless loop of 1 minute 39.</p>
+      <table style="margin-top:26px">
+        <tr><td><b>The reveal</b></td><td>Fades up as the room brightens</td></tr>
+        <tr><td><b>Walkthrough and Q&amp;A</b></td><td>Slightly dimmed, the car leads</td></tr>
+        <tr><td><b>Closing</b></td><td>Full brightness behind Ahmed</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px">
+    <div><img class="fit" style="height:96px" src="assets/img/KC1.jpg"></div><div><img class="fit" style="height:96px" src="assets/img/KC2.jpg"></div><div><img class="fit" style="height:96px" src="assets/img/KC3.jpg"></div><div><img class="fit" style="height:96px" src="assets/img/KC4.jpg"></div></div>
 </section>
 
 <!-- SECTION LIVE -->
@@ -399,9 +434,7 @@ canvas{display:block}
 
 <!-- COUNTDOWN -->
 <section class="slide" data-sec="Going live" data-t="The countdown">
-  <div class="ss" style="position:absolute;inset:0;border:0;opacity:.35">
-    <img src="assets/img/S3.jpg"><img src="assets/img/S4.jpg"><img src="assets/img/S1.jpg"><img src="assets/img/S5.jpg"><img src="assets/img/S2.jpg"><img src="assets/img/S6.jpg"><img src="assets/img/S7.jpg">
-  </div>
+  <video class="bgv" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4" muted loop playsinline autoplay preload="metadata" poster="assets/img/EL3.jpg" src="assets/video/event_loop.mp4"></video>
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(0,0,0,.35) 0%,rgba(0,0,0,.9) 70%)"></div>
   <div style="position:relative;z-index:2">
     <div class="lab">05.1 <i>The countdown</i></div>
@@ -414,8 +447,8 @@ canvas{display:block}
   </div>
   <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:28px;position:absolute;left:120px;right:120px;bottom:100px;z-index:2">
     <div class="card" style="background:rgba(7,9,13,.85)"><div class="num">Five minutes early</div><p style="margin-top:12px;font-size:20px">Every platform goes live 5 minutes before the film, straight into this countdown with a low ambient score.</p></div>
-    <div class="card" style="background:rgba(7,9,13,.85)"><div class="num">Same on every platform</div><p style="margin-top:12px;font-size:20px">English and Arabic, 16:9 for YouTube and X, 9:16 for Instagram. The booking link is pinned before the film starts.</p></div>
-    <div class="card" style="background:rgba(7,9,13,.85)"><div class="num">Announced before</div><p style="margin-top:12px;font-size:20px">An IG story countdown sticker from three days out, so followers get a reminder the moment it starts. YouTube's Premiere page counts down too.</p></div>
+    <div class="card" style="background:rgba(7,9,13,.85)"><div class="num">Same on every platform</div><p style="margin-top:12px;font-size:20px">English and Arabic, 16:9 for YouTube and Facebook, 9:16 for Instagram. The booking link is pinned before the film starts.</p></div>
+    <div class="card" style="background:rgba(7,9,13,.85)"><div class="num">Announced before</div><p style="margin-top:12px;font-size:20px">The KV from 14 November, an IG countdown sticker from three days out, and the YouTube Premiere page from 15 November so people can set a reminder.</p></div>
   </div>
 </section>
 
@@ -435,9 +468,9 @@ canvas{display:block}
       <rect x="1240" y="10" width="440" height="100" rx="4" fill="#07090d" stroke="rgba(255,255,255,.2)"/>
       <text x="1264" y="52" font-size="23" font-weight="400">YouTube Premiere</text><text x="1264" y="82" font-size="17" fill="rgba(255,255,255,.55)">Scheduled, with its own countdown page</text>
       <rect x="1240" y="140" width="440" height="100" rx="4" fill="#07090d" stroke="rgba(255,255,255,.2)"/>
-      <text x="1264" y="182" font-size="23" font-weight="400">Instagram Live</text><text x="1264" y="212" font-size="17" fill="rgba(255,255,255,.55)">Vertical 9:16 version</text>
+      <text x="1264" y="182" font-size="23" font-weight="400">Instagram Live</text><text x="1264" y="212" font-size="17" fill="rgba(255,255,255,.55)">Vertical 9:16 version, Ahmed as co-host</text>
       <rect x="1240" y="270" width="440" height="100" rx="4" fill="#07090d" stroke="rgba(255,255,255,.2)"/>
-      <text x="1264" y="312" font-size="23" font-weight="400">X broadcast</text><text x="1264" y="342" font-size="17" fill="rgba(255,255,255,.55)">Scheduled broadcast, 16:9</text>
+      <text x="1264" y="312" font-size="23" font-weight="400">Facebook Live</text><text x="1264" y="342" font-size="17" fill="rgba(255,255,255,.55)">Scheduled live video, 16:9</text>
     </g>
     <g stroke="url(#lg)" stroke-width="3" fill="none" style="filter:drop-shadow(0 0 6px #7cc4ff)">
       <path d="M262 190 H378"/><path d="M682 190 H798"/>
@@ -446,8 +479,8 @@ canvas{display:block}
   </svg>
   <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:40px;margin-top:50px">
     <p style="font-size:22px"><b>YouTube</b> runs as a true Premiere: scheduled, played to everyone at once, and the home of the evergreen video afterwards.</p>
-    <p style="font-size:22px"><b>Instagram</b> goes out as a Live, fed with its own vertical version of the film, subtitles placed for the phone.</p>
-    <p style="font-size:22px"><b>X</b> goes out as a scheduled broadcast from the same feed. Live chat on all three.</p>
+    <p style="font-size:22px"><b>Instagram</b> goes out as a Live, fed with its own vertical version of the film, with Ahmed joining as co-host.</p>
+    <p style="font-size:22px"><b>Facebook</b> goes out as a scheduled live video from the same feed. Live chat on all three.</p>
   </div>
   <div class="grid" style="grid-template-columns:1fr;margin-top:30px">
     <p style="font-size:22px"><b>Who runs it.</b> The production house that shoots the film also runs the livestream. Serviceplan and MYNM supply platform access and run the chat.</p>
@@ -464,8 +497,8 @@ canvas{display:block}
         <table>
           <tr><td><b>Playout</b></td><td>vMix on a main and a mirrored backup machine. Plays the countdown, then the film, and sends a separate stream to each platform.</td></tr>
           <tr><td><b>YouTube</b></td><td>YouTube Studio. The film is uploaded and scheduled as a Premiere, with the 5 minute countdown at its head.</td></tr>
-          <tr><td><b>Instagram</b></td><td>Instagram Live Producer on desktop, which gives the stream key for the 9:16 output.</td></tr>
-          <tr><td><b>X</b></td><td>X Media Studio Producer, a scheduled broadcast with its own stream key. Access confirmed on the account a week before.</td></tr>
+          <tr><td><b>Instagram</b></td><td>Instagram Live Producer on desktop, which gives the stream key for the 9:16 output. Ahmed's co-host invite is tested at the rehearsal.</td></tr>
+          <tr><td><b>Facebook</b></td><td>Facebook Live Producer, a scheduled live video with its own stream key. Access confirmed on the page a week before.</td></tr>
           <tr><td><b>Connection</b></td><td>Wired line with at least 50 Mbps upload, plus a bonded 5G backup.</td></tr>
           <tr><td><b>Monitoring</b></td><td>One screen per platform watching the public stream, and the chat team in each platform's own tools.</td></tr>
         </table>
@@ -485,6 +518,53 @@ canvas{display:block}
       </div>
     </div>
   </div></div>
+</section>
+
+<!-- CONTENT PLAN -->
+<section class="slide" data-sec="Going live" data-t="Key visuals">
+  <div class="lab">05.3 <i>Key visuals</i></div>
+  <h2 style="font-size:56px">Two key visuals, one light signature.</h2>
+  <p style="margin-top:12px;font-size:20px">Approved. Details only before the live, never the full car.</p>
+  <div style="display:flex;gap:64px;margin-top:36px">
+    <div><div class="kvg"><img src="assets/img/KV2.jpg" style="width:569px;height:320px;object-fit:cover"><img src="assets/img/KV1.jpg" style="width:180px;height:320px;object-fit:cover"></div><h3 style="margin-top:20px;font-size:26px">Frosted planes</h3><p style="font-size:18px">The X5 signature in glass. 16:9 and 9:16.</p></div>
+    <div><div class="kvg"><img src="assets/img/KV4.jpg" style="width:569px;height:320px;object-fit:cover"><img src="assets/img/KV3.jpg" style="width:180px;height:320px;object-fit:cover"></div><h3 style="margin-top:20px;font-size:26px">The light signature</h3><p style="font-size:18px">BMW Iconic Glow and the double-X lights. 16:9 and 9:16.</p></div>
+  </div>
+  <div style="display:flex;gap:40px;margin-top:34px;align-items:center">
+    <div class="vbox" style="width:430px;height:242px;flex:none"><video class="bgv" style="" muted loop playsinline autoplay preload="metadata" poster="assets/img/AKV.jpg" src="assets/video/animated_kv.mp4"></video></div>
+    <div style="max-width:780px"><h3 style="font-size:26px">Animated KV</h3><p style="font-size:19px;margin-top:8px">12 seconds. The frosted planes part and the light signature switches on. The date reads 00.00.2026 until the live time is confirmed, then updates to 21.11.2026 across every version.</p></div>
+  </div>
+</section>
+
+<section class="slide" data-sec="Going live" data-t="Content plan">
+  <div class="lab">05.4 <i>Content plan</i></div>
+  <h2 style="font-size:56px">Two weeks, one call to action.</h2>
+  <p style="margin-top:12px;font-size:20px">Live on Saturday 21 November, in the evening, time to be confirmed. Instagram, Facebook and YouTube.</p>
+  <div class="cp3">
+    <div class="ph3"><h3>Before <span style="font-size:17px;color:var(--dim)">14 to 20 Nov</span></h3><div class="grid" style="grid-template-columns:1fr 1fr;gap:0 9px"><div class="post"><div class="d">Sat 14 Nov<i>Meta</i></div><div class="t">Announcement</div><div class="f">Teaser KV and "Save the date. 21.11". Feed 4:5, story 9:16, post 16:9</div></div><div class="post"><div class="d">Sun 15 Nov<i>CRM, YouTube</i></div><div class="t">Live invite and Premiere page</div><div class="f">Invite to the customer database. WhatsApp 1:1, emailer 16:9. Reminders open on YouTube</div></div><div class="post"><div class="d">Mon 16 Nov<i>Meta</i></div><div class="t">Teaser 1: since 1999</div><div class="f">The original Sports Activity Vehicle and the five generations. Reel 9:16</div></div><div class="post"><div class="d">Tue 17 Nov<i>Meta</i></div><div class="t">"Ask Adam"</div><div class="f">Question box, the answers feed the live Q&amp;A. Story 9:16</div></div><div class="post"><div class="d">Wed 18 Nov<i>Meta</i></div><div class="t">Teaser 2: BMW Iconic Glow</div><div class="f">Detail. Countdown sticker starts, 3 days out. Reel 9:16 and story</div></div><div class="post"><div class="d">Thu 19 Nov<i>Meta</i></div><div class="t">Teaser 3: double-X lights</div><div class="f">Ahmed posts his own teaser as a collab. Reel 9:16</div></div><div class="post"><div class="d">Fri 20 Nov<i>Meta, YouTube</i></div><div class="t">Teaser 4: "Tomorrow."</div><div class="f">With the live link. Reel 9:16 and story</div></div></div></div>
+    <div class="ph3 live"><h3>Live <span style="font-size:17px;color:var(--dim)">Sat 21 Nov</span></h3><div class="post"><div class="d">Morning<i>Meta</i></div><div class="t">"Tonight."</div><div class="f">Reminder with live time and link. Story and post</div></div><div class="post"><div class="d">1 hour before<i>Meta</i></div><div class="t">Final reminder</div><div class="f">Link check. Story 9:16</div></div><div class="post"><div class="d">5 min before<i>YT, IG, FB</i></div><div class="t">The countdown</div><div class="f">16:9 and 9:16</div></div><div class="post"><div class="d">Live<i>YT, IG, FB</i></div><div class="t">The premiere</div><div class="f">Chat team moderating and feeding questions. Ahmed joins as IG co-host</div></div><div class="post"><div class="d">Straight after<i>All</i></div><div class="t">End card holds</div><div class="f">Chat continues, booking link pinned. "Missed it? Watch now" story</div></div><div class="post"><div class="d">Same night<i>Meta</i></div><div class="t">1 minute highlight film</div><div class="f">Feed 4:5</div></div></div>
+    <div class="ph3"><h3>After <span style="font-size:17px;color:var(--dim)">from 22 Nov</span></h3><div class="post"><div class="d">Sun 22 Nov<i>Meta</i></div><div class="t">Carousel</div><div class="f">8 to 10 stills. Feed 4:5</div></div><div class="post"><div class="d">Tue 24 Nov<i>Meta</i></div><div class="t">Reel 1: exterior</div><div class="f">Reel 9:16</div></div><div class="post"><div class="d">Sat 28 Nov<i>Meta</i></div><div class="t">Reel 2: interior</div><div class="f">Reel 9:16</div></div><div class="post"><div class="d">Dates TBC<i>CRM, PR, Social</i></div><div class="t">Closed room experience invites</div><div class="f">Separate customer and media versions. WhatsApp 1:1, emailer 16:9</div></div></div>
+  </div>
+</section>
+
+<section class="slide roomy" data-sec="Going live" data-t="Social guidelines">
+  <div class="lab">05.5 <i>Social guidelines</i></div>
+  <h2 style="font-size:56px">The rules for every post.</h2>
+  <div class="grid" style="grid-template-columns:1.6fr 1fr;gap:70px;margin-top:40px">
+    <div><h3 style="font-size:26px;margin-bottom:8px">Across all posts</h3><table class="gl">
+      <tr><td style="width:200px"><b>Language</b></td><td>Bilingual, Arabic and English</td></tr>
+      <tr><td><b>Car visibility</b></td><td>No full car before the live. Pre-launch uses details only: BMW Iconic Glow, the double-X daytime running lights, the silhouette</td></tr>
+      <tr><td><b>Do not mention</b></td><td>Location, car colour, powertrains</td></tr>
+      <tr><td><b>Terminology</b></td><td>Product terms exactly as in the press release: BMW Iconic Glow, double-X daytime running lights, BMW Winglet, BMW Panoramic iDrive, BMW Passenger Screen, Neue Klasse design language</td></tr>
+      <tr><td><b>Naming</b></td><td>"The all-new BMW X5"</td></tr>
+      <tr><td><b>Call to action</b></td><td>Register for a private viewing</td></tr>
+      <tr><td><b>Market launch</b></td><td>"Coming soon"</td></tr>
+    </table></div>
+    <div><h3 style="font-size:26px;margin-bottom:18px">Watch out for</h3>
+      <div class="post"><div class="d">By Thu 12 Nov</div><div class="t">Approvals</div><div class="f">Teaser KV and live invite approved for the 14 November start</div></div>
+      <div class="post"><div class="d">By Sun 15 Nov</div><div class="t">Live time</div><div class="f">Confirmed so the YouTube Premiere and the invites can carry it</div></div>
+      <div class="post"><div class="d">Throughout</div><div class="t">Stories highlight</div><div class="f">Every X5 story pinned under one "X5" highlight, so late visitors can catch up</div></div>
+    </div>
+  </div>
 </section>
 
 <!-- SECTION PRODUCTION -->
@@ -560,11 +640,11 @@ canvas{display:block}
   <h2 style="font-size:56px">One shoot, a library for the weeks after.</h2>
   <table style="margin-top:40px">
     <tr><th>Deliverable</th><th style="width:520px">Format</th></tr>
-    <tr><td><b>Hero launch film</b></td><td>16:9, plus a 9:16 version for Instagram Live</td></tr>
-    <tr><td><b>60s cutdown</b> of the launch</td><td>9:16 and 16:9</td></tr>
+    <tr><td><b>Hero launch film</b></td><td>16:9 for YouTube and Facebook, plus a 9:16 version for Instagram Live</td></tr>
+    <tr><td><b>1 minute highlight film</b>, posted the same night</td><td>4:5, 9:16 and 16:9</td></tr>
     <tr><td><b>Interview cutdown</b>, the highlights of Adam's interview and the live Q&amp;A</td><td>9:16 and 16:9</td></tr>
     <tr><td><b>Car reels</b>, exterior and interior</td><td>9:16</td></tr>
-    <tr><td><b>Photography</b>, 15 to 20 finals</td><td>Retouched stills</td></tr>
+    <tr><td><b>Photography</b>, 15 to 20 finals, 8 to 10 for the carousel</td><td>Retouched stills, 4:5 crops</td></tr>
   </table>
 </section>
 
